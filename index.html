@@ -5,6 +5,9 @@
 
 <h1>Simulation of COVID-19 spread in schools. </h1>
 <h3>This is an attempt to show with a mathematical model the effects that social distancing and mask wearing would have on the spread of COVID-19 within a school. A detailed <a href="#methodology">methodology</a> of the model is shown at the bottom of the page. <u>The sliders below allow you to change some of the variables into the model.</u> </h3>
+
+<table style="width:100%">
+<tr><td>
 <div class="slidecontainer">
   <h4><input type="range" min="0" max="100" value="6" class="slider" id="barthCoAvgSlider">
     <a id="slider1value"> </a> new cases per day in Barth Co. (avg.)
@@ -22,7 +25,8 @@
     <a id="slider2value"> </a> students in the school
     <input type="range" min="1" max="20" value="3" class="slider" id="transmissionRateSlider">
     <a id="slider7value"> </a> estimated R0 within school</h4>
-</div>
+</div></td>
+<td>
 <hr>
 <p align=center><button id="temp" onclick="myFunction()">Run a simulation</button>
 <p>                           
@@ -31,6 +35,7 @@
   <p align = left>
   Remember that mathematical models are typically WRONG, but they can be USEFUL. <br>
   Simulations have random variation programmed into them, so you should run more than one simulation at each setting to get a feel for the variety of outcomes that are possible. 
+</td></tr></table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 <script src="covidsim.js"></script>  
 <hr>
