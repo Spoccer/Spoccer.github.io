@@ -74,7 +74,7 @@ temp.onclick = function()
           backgroundColor: '#FAFA34',
         },
         {
-          label: 'Immune',
+          label: 'Recovered',
           data: immuneArray,
           backgroundColor: '#FA1234',
         }
