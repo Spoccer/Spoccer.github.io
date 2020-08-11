@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ReplaceDemo
+public class ReplaceDemo 
 {
     public static void main(String[] args)
     {              
