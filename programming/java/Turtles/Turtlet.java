@@ -7,7 +7,7 @@
 // and you replace 100 by any x-coordinate and 150 by any y-coordinate to
 // obtain the starting point of your Turtlet.
 
-import java.awt.Color;
+import java.awt.Color; 
 
 public class Turtlet extends Object
 {	public static final double DEGREE = Math.PI / 180; 
