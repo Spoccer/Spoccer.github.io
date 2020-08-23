@@ -1,0 +1,61 @@
+/*-------------------------------------------------------
+ * Cascading Style Sheet - Mike Spock 7/1/08
+ * intended for use with handcode2.html (week#4 assignment)
+ *------------------------------------------------------- */
+
+/* @charset "utf-8"; //might need this later? */
+
+/* Element styles */
+body {
+background-color:#FFFFFF;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+}
+h1 {
+color: #408;
+font-size: 28px;
+font-variant:small-caps;
+}
+h2 {
+color: #0033CC;
+font-size:18px;
+font-weight: normal;
+font-variant:small-caps;
+border-bottom:groove; /* This is a better version of <HR>, sweet! */
+border-bottom-color:#0033CC;
+}
+b {
+color: #804040; /*An interesting salmon color. */
+}
+a:link {color:#cc4488;}
+a:visited {color:#000066;}
+a:hover {color:#800;}
+
+/* Classes defined */
+.list {font-size:12px; line-height:130%;}
+
+.list li {
+margin-bottom:8px;
+}
+
+.list b { 
+font-size:14px;
+font-weight: normal;
+color:#0066FF;
+}
+
+ol {
+list-style:upper-roman;
+}
+
+div#info b {
+font-weight: normal; /* Only the salmon color (which is inherited) */
+}
+/* Id definition */
+/* An id that will be applied to just one thing in the HTML*/
+#quote {
+background-color:#def;
+font-family:Georgia, "Times New Roman", Times, serif;
+font-size:12px;
+color:#000066;
+}

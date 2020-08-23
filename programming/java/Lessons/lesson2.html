@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Java - Conditional Logic - Student Manual</title>
+<link href="../stylesheets/id572.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body>
+<h1>Lesson 2 - Classes</h1>
+<p class="toc">TABLE OF CONTENTS: <a href="#intro">Introduction</a> - <a href="#sec1">Object-Oriented Programming</a> - <a href="#sec2">The main method</a> - <a href="#sec3">Varaibles</a> - <a href="#sec4">Methods</a> - <a href="#sec5">Constructors</a> - <a href="#sec6">API</a></p>
+<h2><a name="intro" id="intro"></a>Introduction - </h2>
+<p>Classes are the basic building block of Java (OOP). You have already written a class in lesson 1 when you created the HelloWorld class. However, in that lesson you were just copying code to get started. After this lesson, you will have an understanding of how to organize, design and write classes from scratch by yourself. </p>
+<h2>Pre-requisites - </h2>
+<p>Before beginning this lesson you should  have completed the HelloWorld2 program.  (This would give you experience using  the programming environment and structuring simple programs.) </p>
+<h2>Goals - </h2>
+ <ol>
+   <li>Students will understand the basic concepts of object oriented programming.</li>
+   <li> Students will be able to divide a programming task into classes and methods to create an organized solution.  </li>
+   <li> Students will be able to use variables to store and access data within a program.</li>
+   <li>Students will be able to use the Java API documentation to find and utilize classes and methods in the Java library. </li>
+ </ol>
+<h1><a name="sec1" id="sec1"></a>Section 1: Object-Oriented Programming</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+  <br />
+After reading this section, you will be able to explain the differences between classes and objects. <br />
+<br />
+After reading this section, you will be able to explain the differences between sequential and object-oriented programming.<br />
+<br />
+Given a description of a program, be able to identify objects that are needed to accomplish that task. <br />
+</p>
+<p>Java is an object-oriented programming (OOP) language. The concept of OOP allows programs to have many different elements that all interact with each other. While you are new to the term, you have you object-oriented programs all your life on the computer. Windows applications are almost always object-oriented. The browser window you are using right now is full of objects. The buttons, the menus, the slide bars, the minimize-maximize buttons, the main window (which is also full of objects.)... Object oriented programming takes complex things and programs all of the pieces separately and then teaches the objects how to interact with each other. This allows objects to be used over and over in many different ways. Objects can be simple or complex. They can be graphical (visual) or more analytical (for processing.) </p>
+<p>The basic builging block of the Java language is a class. A class defines a 'class' of objects. It is the blueprint to be used whenever an object is created. The code you put into a class will include what data the object will keep track of and what functions it can perform. You've already written your first class. The HelloWorld class from Lesson1 defined a class of objects that said Hello to the computing world. </p>
+<p>If we think of a Person as an object. We could write the Person class which defines that class of objects. </p>
+<p>A Person would have a name, height, age, eye color, and many other parameters that might make it different from other objects created from the Person class. Also a Person would have many methods (or functions) that it can perform: sayName, walk, sit, turn, and many, many others... Think of yourself as a Person object that might be controlled by a program. What would you put into the program? </p>
+<h1><a name="sec2" id="sec2"></a>Section 2: The main method</h1>
+<p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br /> 
+     After reading this section, you will be able to explain the significance of the main method in Java programs.</p>
+ <p>In Lesson1 you were able to compile and run this program. </p>
+ <pre>// My first program!!!
+
+<br />public class HelloWorld
+{
+    public static void main(String[] args)
+    {
+         System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</pre>
+ <p>Let's analyze what it really means. </p>
+ <pre>public class HelloWorld</pre>
+<p>This first line says that you are declaring a class of objects called HelloWorld. The class is public meaning there are no restrictions on who can access it. (Later we will learn the difference between private and public, but I bet you can figure it out on your own.) This class will contain the blueprint for all HelloWorld objects.</p>
+<pre>{</pre>
+<p>The curly brackets group the code that is within the class. They are always used for grouping sections of code together. </p>
+<pre> public static void main(String[] args) </pre>
+<p>The HelloWorld class is very simple and it only contains one method - the main method. The syntax for starting a main method is always the same. Including a main method in our program allows the program to be run as an application. </p>
+<pre> System.out.println(&quot;Hello World!&quot;); </pre>
+<p>This line uses the System.out object (which is connected to the terminal display) and runs the println method. This prints out the text of HelloWorld. </p>
+<p></p>
+<p></p>
+<h1><a name="program" id="program"></a>Section 3: Variables</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+     <br />
+Given a list of identifiers, students will be able to determine which ones are valid.<br />
+<br />
+Given a description of a variable, students will be use the correct syntax to declare and initialize it. </p>
+<h3>Identifiers</h3>
+<p>Java, like most other programming languages is very algebraic. It works with variables, and those variables have names. Rather than using single letter variables (which aren't very descriptive) it is good practice to use words as variable names in your programs. The name of a variable is refered to as an identifier. There are only a few rules that apply to choosing identifier names: </p>
+<ul>
+  <li>You may only use letters (a-z, A-Z) numbers (0-9) and the underscore (_) </li>
+  <li>The first character cannot be a number</li>
+  <li>You cannot use spaces. </li>
+</ul>
+<p>All of these would be valid identifiers: </p>
+<table width="100%" border="1" cellspacing="1" cellpadding="2">
+  <tr>
+    <td><pre>joe</pre></td>
+    <td><pre>steve</pre></td>
+    <td><pre>count</pre></td>
+    <td><pre>COUNT</pre></td>
+    <td><pre>cOuNt</pre></td>
+    <td><pre>num1</pre></td>
+    <td><pre>reallyLongDescriptiveName</pre></td>
+    <td><pre>_jumper</pre></td>
+    <td><pre>ten2030</pre></td>
+    <td><pre>Apple</pre></td>
+  </tr>
+</table>
+<p>While these are invalid: </p>
+<pre class="badcode">1stPlace  //starts with a number!
+
+
+two words //can't have a space!
+
+
+Real*Cool //can't have special symbols!</pre>
+<h3>Types of variables</h3>
+<p>Every variable must have a type. There are some primitive types that we will use. These primitive types are only used to store simple numerical values. Some of the primitive types are listed below.</p>
+<table width="60%" border="1" cellspacing="1" cellpadding="2">
+  <tr class="gray">
+    <td>Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>int</td>
+    <td>Integer numbers</td>
+  </tr>
+  <tr>
+    <td>double</td>
+    <td>Decimal numbers</td>
+  </tr>
+  <tr>
+    <td>boolean</td>
+    <td>True/False values</td>
+  </tr>
+  <tr>
+    <td>char</td>
+    <td>Single characters</td>
+  </tr>
+</table>
+<p>We will also use variables to represent instances of classes. (Variable names are given to objects.) A few that we have (or soon will) used are listed in the table below, however any class you write can be used to make objects. </p>
+<table width="60%" border="1" cellspacing="1" cellpadding="2">
+  <tr class="gray">
+    <td>Type</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Text values</td>
+  </tr>
+  <tr>
+    <td>Random</td>
+    <td>Random number generator objects</td>
+  </tr>
+  <tr>
+    <td>Scanner</td>
+    <td>Scanner objects (used to read input)</td>
+  </tr>
+  <tr>
+    <td>Turtle</td>
+    <td>Drawing objects (from Java Au Naturel)</td>
+  </tr>
+</table>
+<h3>Declarations and Assignment statements</h3>
+<p>Declaring a variable gives it definition so that the compiler knows what it is. Often when we declare a variable we also assign it a value. </p>
+<pre>int number; //just a declaration</pre>
+<pre>number = 15; //The left side ALWAYS is the variable you are changing. </pre>
+<pre>int number = 15; // Declaring and assigning a value in one step!
+</pre> 
+<pre>String name = &quot;Sarah&quot;;</pre>
+<pre>double decimal = 2.71828;</pre>
+<h1><a name="sec4" id="program2"></a>Section 4: Methods</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+     <br />
+   Given a method header, students will be able to identify the name of the method, the return type, and the paramters (inputs) to the method. <br />
+   <br />
+Given a description, student will use the correct syntax to write a method header that meets the description. <br />
+<br />
+Given a larger scale task, students will be able to break the task into methods to organize the code. </p>
+ <p>Methods define the actions that an object can do. </p>
+ <p>Methods are also useful in organizing your code, whenever you have an action that will need to be performed many times, make it a method. That way you can just call the method many times, rather than writing the code that was in the method over and over. It is another way that we make code re-usable! </p>
+ <p>The syntax for a method (which must be within a class) is:</p>
+ <pre>scope returnType methodName ( parameters )
+{
+	lots of code...
+}</pre>
+<p>It's really the first line that we will concentrate on at first - the method header. This line defineshow the method interacts with other parts of the program. </p>
+<ul>
+  <li><strong>scope</strong> - public or private: describes how the method can be accessed. We'll use public for now and come back to explain private in a later lesson. </li>
+  <li><strong>returnType</strong> - All methods can return a value. This tells what type of value will be returned when the method is done. Any class of objects or primitive type can be used. If the method will not return anything, use void as the return type. </li>
+  <li><strong>methodName</strong> - give your method a descriptive identifier so it is easy to understand what you intend for it to do. </li>
+  <li><strong>parameters</strong> - any number of parameters can be passed to a method. The method makes a copy of these to use within the method. The examples below will help explain this concept.</li>
+</ul>
+<pre>public void sayHello(String name)
+{
+	System.out.println(&quot;Hello, &quot;+name);
+}</pre>
+<p>This is a method that  says &quot;Hello&quot; to someone. It recieves one String (called name) and returns nothing (void). </p>
+<pre>public int total(int num1, int num2, int num3)
+{
+	int result = num1+num2+num3;
+	return result;
+}</pre>
+<p>This method recieves three numbers and returns an integer. The method name is total, which is appropriate since it adds the numbers up. </p>
+<pre>public String getName()
+{
+	Scanner keyboard = new Scanner(System.in);
+	System.out.println(&quot;Please enter your name.&quot;);
+	String input = keyboard.next();
+	return input;
+}</pre>
+<p>This method gets the user's name and returns it as a String. It recieves no parameters. </p>
+<h2>Practice</h2>
+<p><strong>Try some example coding challenges below. You can check your work by highlighting the answer section. </strong></p>
+<table width="100%" border="1" cellspacing="1" cellpadding="2">
+  <tr class="gray">
+     <td>method header</td>
+    <td>method name</td>
+     <td>return type</td>
+     <td>input parameters</td>
+  </tr>
+   <tr>
+     <td><pre class="table">public void connect( )</pre></td>
+     <td><pre class="answer">connect</pre></td>
+     <td><pre class="answer">void (nothing)</pre></td>
+     <td><pre class="answer">empty (none)</pre></td>
+   </tr>
+   <tr>
+     <td><pre class="table">public int sum(int a, int b)</pre></td>
+     <td><pre class="answer">sum</pre></td>
+     <td><pre class="answer">int</pre></td>
+     <td><pre class="answer">two integers (named a &amp; b)</pre></td>
+   </tr>
+   <tr>
+     <td><pre class="table">public String getName( )</pre></td>
+     <td><pre class="answer">getName</pre></td>
+     <td><pre class="answer">String</pre></td>
+     <td><pre class="answer">empty (none)</pre></td>
+  </tr>
+   <tr>
+     <td><pre class="table">public static void main(String[] args)</pre></td>
+     <td><pre class="answer">main</pre></td>
+     <td><pre class="answer">void</pre></td>
+     <td><pre class="answer">String array (named args)</pre></td>
+   </tr>
+   <tr>
+     <td><pre class="table">public boolean isGameOver(int score)</pre></td>
+     <td><pre class="answer">isGameOver</pre></td>
+     <td><pre class="answer">boolean (T/F)</pre></td>
+     <td><pre class="answer">one integer (named score)</pre></td>
+   </tr>
+ </table>
+ <p>&nbsp;</p>
+<h1><a name="sec5" id="program3"></a>Section 5: Constructors</h1>
+<p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br />
+After reading this section, students will be able to write and use constructor methods to initialize objects. </p>
+ <p>There is one special case of a method that doesn't quite follow the rules of the previous section. A constructor is a method that is only called when a new object is created. The constructor method in a class allows things to be initialized before the object is ever used. </p>
+ <p>For example, in a Person class...</p>
+ <pre>public class Person
+{
+
+	int myAge;
+	String myName;
+
+
+	public Person(String name)
+	{
+		myName = name;
+		myAge = 0;
+	}
+
+
+	public void sayName()
+	{
+		System.out.println(&quot;My name is &quot;+myName);
+	}
+
+}</pre>
+<p>The Person class also has a constructor method. This method is different from other methods in these ways:</p>
+<ul>
+  <li>The name of the method must be the same as the name of the class</li>
+  <li>There is no return type given </li>
+</ul>
+<p>In another program that uses Person objects, the code to create a Person you would use this line:</p>
+<pre>Person spock = new Person(&quot;Mike&quot;);</pre>
+<h1><a name="sec6" id="program4"></a>Extra resources: API (The Java library)</h1>
+ <p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br />
+   Given access to the API documentation, students will be able to find classes and methods in those classes to use as tools within their programs. <br />
+   <br />
+ After reading this section, students will be able to use import statements and library functions as tools in their programs. </p>
+ <p>There are many classes that have already been created for you to use. You can find them all in the Java API. This is essentially a library of Java classes that you can use. You could program for years and not use all of them! For many of the classes in the library, you will need to use an import statement at the top of your program to tell the compiler to import that class from the library. </p>
+ <pre>import java.util.Random;
+
+
+public class LuckyNumber
+{
+	public static void main(String[] args)
+	{
+		Random randy = new Random();
+		int lucky = randy.nextInt(100);
+		System.out.println(&quot;Your lucky number is &quot;+lucky);
+	}
+
+}</pre>
+<h2>Here are a few programming challenges for you to try:</h2> 
+<p class="quote">(This assignment is worth 90 points. You must complete each of the following programs)</p>
+ <ol>
+   <li>Complete the Turtle exercises in unit 2 of Java Au Naturel. These provide an excellent way to practice working with objects and classes (and graphics!) </li>
+   <li>Write a program that uses a Random object to display a random decimal between 0 and 1 (look at the API to find out more about Random objects.) </li>
+   <li>Write a program that asks the user their name and then changes all of the vowels to numbers i1, a2, e3, o0, u4. (Read about methods in the String class that can help.)</li>
+ </ol>
+<h1>Helpful References</h1>
+ <p><a href="http://www.bluej.org" target="_blank">BlueJ</a></p>
+ <p><a href="http://www.cs.ccsu.edu/~jones/book.htm" target="_blank">Java Au Naturel</a></p>
+ <p><a href="http://java.sun.com/j2se/1.5.0/docs/api/" target="_blank">Java API</a></p>
+<p><a href="http://www.landofcode.com/java/java-conditional-logic.php">Online Tutorial - LandOfCode</a></p>
+<p><a href="http://www.cafeaulait.org/javatutorial.html">Online Java Tutorial - Cafe Au Lait</a></p>
+ <p>Text - <strong>Java Concepts</strong> by <em>Cay Horstmann</em> (Chapter 6 - Decisions) *We have six copies of this book in the computer lab*</p>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</body>
+</html>

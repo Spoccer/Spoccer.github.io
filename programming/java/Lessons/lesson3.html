@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Java - Conditional Logic - Student Manual</title>
+<link href="../stylesheets/id572.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body>
+<h1>Lesson 3 - Conditional Logic</h1>
+<p class="toc">TABLE OF CONTENTS: <a href="#intro">Introduction</a> - <a href="#boolean">Section 1: Boolean Logic</a> - <a href="#conditional">Section 2: Conditional Logic</a> - <a href="#program">Section 3: Applying it to programs</a></p>
+<h2><a name="intro" id="intro"></a>Introduction - </h2>
+<p>You've started writing some simple programs in our previous lessons. Now it's time to have those programs make decisions for themselves. We don't expect these programs to become self-aware, they're only going to make the decisions that we teach them to, using the rules that we code them with. Conditional Logic is the term for making a decision based on a certain condition(s). </p>
+<ul>
+  <li>If you are writing a program for a bank, you'll need to decide if the user has typed in the correct password before giving them access to an account. </li>
+  <li>If you are creating a game program, (Frogger) you'll need to decide whether the car hit the frog or if the frog made it across. </li>
+  <li>If you are writing a simple grading program, you'll need to decide what letter grade to assign for a given percentage grade. </li>
+</ul>
+<p>All of these are decisions that you can program a computer to make over and over. Computers are good at making repetitive tasks easier. </p>
+<p>Good Luck! Your programs will be much more powerful and interesting after you complete this lesson. </p>
+<h2>Pre-requisites - </h2>
+<p>Before beginning this lesson you should  have completed the HelloWorld2 program.  (This would give you experience using  the programming environment and structuring simple programs.) You should also have a basic understanding of objects and variables  (although not mastery yet.)  </p>
+<h2>Goals - </h2>
+ <ol>
+   <li> <a href="#boolean">Students will be able to determine the outcome of a Boolean  logic statement.</a>  </li>
+   <li> <a href="#conditional">Students will use correct syntax when writing conditional  logic statements in java.</a>  </li>
+   <li> <a href="#program">Students will be able to use conditional logic statements  within Java programs to make decisions and accomplish tasks.</a></li>
+ </ol>
+ <h1><a name="boolean" id="boolean"></a>Section 1: Boolean Logic</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+  <br />
+Given a set assignment statements to define variables and a  series of simple (one step) Boolean logic statements involving those variables  students will correctly identify the result of the Boolean logic as true of  false.  <br />
+<br />
+Given a series of compound (involving and/or) Boolean logic  statements, students will correctly simplify them into true or false.  </p>
+<p>Boolean logic is a system that evaluates expressions into either true or false. This makes it very useful in programming. </p>
+<p>It is a decision making system: <strong>true or false / yes or no / one or zero</strong>. </p>
+ <p>You've worked with Boolean logic before, but probably never called it that. </p>
+ <pre>3 &gt; 4 = false</pre>
+ <pre>2 &lt; 8 = true</pre>
+ <p>Those are Boolean logic statements. They consist of an expression that can be evaluated into true or false. </p>
+ <p>Here is a list of the Boolean operators that we will use in this class:</p>
+ <table width="60%" border="1" cellspacing="2" cellpadding="2">
+   <tr>
+     <td width="14%">operator</td>
+     <td width="53%">description</td>
+     <td width="33%">examples</td>
+   </tr>
+   <tr>
+     <td width="14%">&gt;</td>
+     <td>greater than</td>
+     <td>5 &gt; 7 = false<br />
+       100 &gt; 99 = true</td>
+   </tr>
+   <tr>
+     <td>&lt;</td>
+     <td>less than</td>
+     <td>10 &lt; 20 = true<br />
+     10 &lt; 8 = false</td>
+   </tr>
+   <tr>
+     <td>&gt;=</td>
+     <td>greater than or equal to</td>
+     <td>1 &gt;= 2 = false<br />
+     1 &gt;= 1 = true</td>
+   </tr>
+   <tr>
+     <td>&lt;=</td>
+     <td>less than or equal to</td>
+     <td>1 &lt;= 2 = true<br />
+1 &lt;= 1 = true</td>
+   </tr>
+   <tr>
+     <td>==</td>
+     <td>equal to (yes, it's two equals signs)</td>
+     <td>7 == 6 = false<br />
+     3 == 3 = true</td>
+   </tr>
+   <tr>
+     <td>!=</td>
+     <td>not equal to</td>
+     <td>7 != 6 = true<br />
+     3 != 3 = false</td>
+   </tr>
+ </table>
+ <p>These Boolean operators deal with numeric values or variables (of type int or double). Later we will also learn some methods that return Boolean values. </p>
+ <p>Consider the following variable declarations: </p>
+ <pre>int num = 10; 
+int x = 4; 
+int z = 14;</pre>
+ <p>What would be the result of evaluating the following expressions? </p>
+ <table width="90%" border="1" cellspacing="2" cellpadding="2">
+   <tr>
+     <td><div align="center">
+       <pre class="table">x &gt; 0</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">x &gt;= z</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">num != 10</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">x==z</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">x != 3</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">x+num == z</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">z &lt;= 99</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">num &lt; 1</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">z &gt; z</pre>
+     </div></td>
+     <td><div align="center">
+       <pre class="table">8 &lt; x</pre>
+     </div></td>
+   </tr>
+   <tr>
+     <td><div align="center" class="style1">true</div></td>
+     <td><div align="center" class="style1">false</div></td>
+     <td><div align="center" class="style1">false</div></td>
+     <td><div align="center" class="style1">false</div></td>
+     <td><div align="center" class="style1">true</div></td>
+     <td><div align="center" class="style1">true</div></td>
+     <td><div align="center" class="style1">true</div></td>
+     <td><div align="center" class="style1">false</div></td>
+     <td><div align="center" class="style1">false</div></td>
+     <td><div align="center" class="style1">false</div></td>
+   </tr>
+ </table>
+ <p>Drag the mouse over the second row to check your answers. </p>
+ <p>&nbsp;</p>
+ <p>Boolean logic also allows us to look at a combination of conditions in an expression. </p>
+ <table width="78%" border="1" cellpadding="3" cellspacing="1">
+   <tr>
+     <td width="14%"><div align="center">operator</div></td>
+     <td width="53%">description</td>
+     <td width="33%">examples</td>
+   </tr>
+   <tr>
+     <td width="14%"><div align="center">&amp;&amp;</div></td>
+     <td>AND<br />
+     Both items must be true... </td>
+     <td>true &amp;&amp; true = true
+       <br />
+       true &amp;&amp; false = false
+       <br />
+       false &amp;&amp; true = false
+       <br />
+     false &amp;&amp; false = false</td>
+   </tr>
+   <tr>
+     <td><div align="center">||</div></td>
+     <td>OR (The pipe, | is shift-backslash)<br />
+     One or the other (or both) need to be true...</td>
+     <td>true || true = true<br />
+true || false = true<br />
+false || true = true<br />
+false || false = false</td>
+   </tr>
+   <tr>
+     <td><div align="center">!</div></td>
+     <td>NOT (exclamation point!) <br />
+     Opposite if an expression...</td>
+     <td>!true = false<br />
+     !false = true</td>
+   </tr>
+ </table>
+<p>Using our same declarations from above, we could make compound statements like:</p>
+ <pre>( x &gt; 5 ) &amp;&amp; ( num == 10 )</pre>
+ <p> Here, the first part is false and the second part is true, since they are combined with an AND operator both must be true, so this would evaluate to <strong>false</strong>. </p>
+ <pre>( x &gt; 5 ) || ( num == 10 )</pre>
+<p>However in this case since the two parts are connected with an OR operator, only one or the other need to be true, so this would evaluate to<strong> true</strong>.</p>
+ <p>Next we will learn how to use this type of logic to make decisions within our Java code. </p>
+ <h1><a name="conditional" id="conditional"></a>Section 2: Conditional Logic in Java</h1>
+ <p class="objectives"><strong>These are your objectives for this section:</strong><br />
+     <br />
+Given an output description and a section of code with a  missing line, students will be able to fill in a conditional logic statement  that would accomplish the task without producing errors. <br />
+<br />
+Given a description of three possible outcomes based on the  numeric value of an Integer variable, students will write a series of conditional  logic statements to successfully choose the correct outcome.  <br />
+<br />
+Given sections of code that includes a conditional logic  statement, students will identify and correct the error in the code or identify  the code as correct.  Possible errors to  be tested would include – conditions on else statements, proper use of {} to  group statements, proper use of Boolean operators, choice of == vs. .equals()  based on the types of objects being compared, improper nesting of statements,  syntax errors.  </p>
+ <p>Now that you have learned about Boolean logic you have an understanding of how to determine if an expression is true or false. </p>
+ <p>In Java, we can write statements that will only be executed if a condition is true. Here is how this would work. </p>
+ <pre>if(condition)
+    statement; </pre>
+    
+ <p>The statement would only be run if the condition evaluated to true. </p>
+ <pre>if(score &gt; 100)
+    System.out.println(&quot;You Win!&quot;);</pre>
+ <p>In this example, if the variable <span class="javacode">score</span> was greater than 100, the terminal window would display <span class="javacode">You Win!</span>, however if the score was not above 100, the program would continue without printing out <span class="javacode">You Win!</span></p>
+ <p>Sometimes you have multiple lines of code that you want to execute conditionally. You can always group together sections of code using curly brackets { }. </p>
+ <pre>if(score &gt; 100)
+{
+     System.out.println(&quot;You Win!&quot;);
+     gamesWon = gamesWon + 1;
+     score = 0; //Reset the score
+}</pre>
+ <p>This example (above) of code would run all three statements within the curly brackets only if the condition was met. However, the example below would only decide whether or not to execute the &quot;You Win!&quot; line of code, the others would always run because they are not grouped with the if statement. Remember unless you use curly brackets, the if statement ends at the semicolon. </p>
+ <pre class="badcode">if(score &gt; 100)
+     System.out.println(&quot;You Win!&quot;);
+     gamesWon = gamesWon + 1;
+     score = 0; //Reset the score
+</pre>
+ <p>Java also provides a way to have code that executes when a condition is false. To do this you would use an <span class="javacode">else</span> statement. Else statements must always follow an <span class="javacode">if</span> statement. They work in tandem. The<span class="javacode"> if </span>statement tells what to do if the condition was true, the <span class="javacode">else </span>statement tells what to do if the condition is false. </p>
+<pre>if(condition)
+   statement; //Runs if the condition is true.
+else 
+   statement2; //Runs if the conditions is false.</pre>
+ <p>Note that an else statement NEVER has a condition. The<span class="javacode"> if </span>statement contains the decision, the else statement only contains the alternative reaction (when it's false.) </p>
+ <p>In the context of the earlier example you might write:</p>
+ <pre>if(score &gt; 100)
+    System.out.println(&quot;You Win!&quot;);
+else
+    System.out.println(&quot;You Lose.&quot;);</pre>
+ <p>The same rules for using curly brackets to house multiple statements applies to the <span class="javacode">else</span> statement as well. </p>
+ <p></p>
+ <p>Sometimes you might have a series of conditions that you wish to check. This might be done with a series of if statements, or more often the best choice is <span class="javacode">if - else if - else</span>. In the example below, you check to see if the student earned an &quot;A&quot;, but if they didn't, within the else statement you check another condition (else if) to see if they got a &quot;B&quot; this continues until the final else, they got an &quot;F&quot;. </p>
+ <pre>if(grade &gt; 90)
+     System.out.println(&quot;A&quot;);
+else if (grade &gt; 80)
+     System.out.println(&quot;B&quot;);
+else if (grade &gt; 70)
+     System.out.println(&quot;C&quot;);
+else if (grade &gt; 60)
+     System.out.println(&quot;D&quot;);
+else
+     System.out.println(&quot;F&quot;);</pre>
+ <p>One important thing to note is that there are many ways that you could code the decision process shown above that would work. </p>
+ <h2>Some special (or new to you) cases for the conditions within if statements. </h2>
+ <p>The computer really isn't that smart. It knows how to deal with numbers, because those are primitive types of variables. The computer can easily tell if an int variable is equal to 5. However once you go beyond the few primitive types, the computer doesn't really know how to compare things. For example if I enter my name into a <span class="javacode">String</span> variable and checked <span class="javacode">if(name==&quot;Mike&quot;)</span> the result would be false (even if my name was Mike). The computer doesn't know the details of what is stored in a String object, so it doesn't know how to compare two of them. </p>
+ <p>There is a solution. When programmers created the <span class="javacode">String</span> class, they wrote a method called <span class="javacode">.equals( )</span>. This method receives a <span class="javacode">String</span> and compares it to the one calling the method and returns either true or false. Let me show you an example...</p>
+ <pre>String name = &quot;Mike&quot;
+if(name.equals(&quot;Mike&quot;))
+    System.out.println(&quot;Access Granted&quot;);
+else
+    System.out.println(&quot;Access Denied&quot;);</pre>
+<p>The <span class="javacode">String</span> object (name) calls the equals method to compare itself to &quot;Mike&quot; and returns either true or false. The result of this method call is generated and then the if statement can make it's decision. </p>
+<p>We will see other Boolean methods for use in comparing objects as we continue in this course, but the <span class="javacode">.equals</span> method is one that will be of great use to us early in this course. </p>
+<h2>Practice</h2>
+<p><strong>Try some example coding challenges below. You can check your work by highlighting the answer section. </strong></p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+  <tr>
+    <td>Write a section of code that would print out Good Job if the value of the int grade was higher than 80.</td>
+    <td><pre class="answer">if(grade &gt; 80) 
+   System.out.println(&quot;Good Job&quot;);</pre>    </td>
+  </tr>
+  <tr>
+    <td>Write a section of code that adds one to a variable, counter, only if the value of counter is less 100, otherwise reset it to zero. </td>
+    <td><pre class="answer">if(counter&lt;100)
+    counter = counter + 1;
+else
+    counter = 0;</pre></td>
+  </tr>
+  <tr>
+    <td>Write a section of code that checks a String variable password against a String called key and replies &quot;You are in&quot; if the password matches the key. </td>
+    <td><pre class="answer">if(password.equals(key))
+    System.out.println(&quot;You are in&quot;);</pre></td>
+  </tr>
+  <tr>
+    <td>Write the conditional logic for a guess number game. Given an integer variable guess, and an integer variable secretNumber, respon to the user whether they are &quot;Too high&quot;, &quot;Too low&quot; or &quot;Just right&quot;</td>
+    <td><pre class="answer">if(guess &gt; secretNumber)
+    System.out.println(&quot;Too high&quot;);
+else if (guess &lt; secret Number)
+    System.out.println(&quot;Too low&quot;);
+else 
+
+    System.out.println(&quot;Just right&quot;);</pre></td>
+  </tr>
+</table>
+<p><strong>Find and correct the errors in the following pieces of code:</strong></p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+  <tr>
+    <td><pre class="table">if(number = 5) 
+    System.out.println(&quot;correct.&quot;);</pre></td>
+    <td><pre class = "answer">if(number == 5) //Two equals signs to compare.
+    System.out.println(&quot;correct.&quot;);</pre></td>
+  </tr>
+  <tr>
+    <td><pre class="table">String code = &quot;asdf&quot;;
+if(code == &quot;asdf&quot;)
+    System.out.println(&quot;You Win&quot;);</pre></td>
+    <td><pre class = "answer">String code = &quot;asdf&quot;;
+if(code.equals(&quot;asdf&quot;)) //Must use .equals() here
+    System.out.println(&quot;You Win&quot;);</pre></td>
+  </tr>
+  <tr>
+    <td><pre class="table">if(score &gt; 100)
+    System.out.println(&quot;Yahoo!&quot;);
+else (score &lt;= 100)
+    System.out.println(&quot;Booo.&quot;);</pre></td>
+    <td><pre class = "answer">if(score &gt; 100)
+    System.out.println(&quot;Yahoo!&quot;);
+else //No conditions on else statements
+    System.out.println(&quot;Booo.&quot;);</pre></td>
+  </tr>
+</table>
+<p></p>
+<h1><a name="program" id="program"></a>Section 3: Applying conditional logic to programs</h1>
+<p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br />
+Given a specification and computer access with appropriate  software, write a program that produces the correct output (e.g. a letter  grade) based on a user input (e.g. percentage score).  The program must run without errors and  produce the correct output in every possible test case (e.g. 0-100%) </p>
+ <p>Now you know the basics about conditional logic, so let's write a program! </p>
+ <p>For this example, we will continue one of the examples that we looked at in the previous section. We will have the user enter a percentage grade and we will tell them what letter grade to give. We'll use the same scale as in the example above. (90=A, 80=B, 70=C, 60=D.) What we need to do is combine the snippets of code into a runnable program. </p>
+ <pre>public class gradeConverter
+{
+    public static void main(String[] args)   
+    {
+        //Declare a scanner object to get input.
+        Scanner keyboard = new Scanner(System.in);
+
+        //Get the grade from the user.
+        System.out.println(&quot;Enter a percentage grade.&quot;);
+        int grade = keyboard.nextInt();
+
+        //Start the output line (print, not println).
+        System.out.print(&quot;The letter grade is: &quot;);
+
+        //Determine and print the proper grade.
+        if(grade &gt; 90)
+            System.out.println(&quot;A&quot;);
+        else if (grade &gt; 80) 
+            System.out.println(&quot;B&quot;);
+        else if (grade &gt; 70)
+            System.out.println(&quot;C&quot;);
+        else if (grade &gt; 60)
+            System.out.println(&quot;D&quot;);
+        else
+            System.out.println(&quot;F&quot;);
+    }
+}
+</pre>
+ <h2>Here are a few programming challenges for you to try:</h2>
+  <p class="quote">(This assignment is worth 90 points. You must complete three of the following programs)</p>
+ <ol>
+   <li>Write a program that asks the user for a month, and then displays the number of days in that month. </li>
+   <li>Advanced** Write a program that asks the user for a day, month and year and displays what day of the week that was. (This will require some investigation on the Internet. There is a formula for this.) </li>
+   <li>Write a program that reads a pair of numbers and then prints the numbers out in numerical order. (**Try it with three or four numbers!)</li>
+   <li>Write a program that receives the three coefficients of a quadratic equation and prints out the two solutions. You program should print out NO SOLUTIONS if that is the case. (You'll have to make sure the value under the square root is not negative.) </li>
+ </ol>
+ <p>&nbsp;</p>
+<h1>Helpful References</h1>
+ <p><a href="http://www.bluej.org" target="_blank">BlueJ</a></p>
+ <p><a href="http://www.cs.ccsu.edu/~jones/book.htm" target="_blank">Java Au Naturel</a></p>
+ <p><a href="http://java.sun.com/j2se/1.5.0/docs/api/" target="_blank">Java API</a></p>
+ <p><a href="http://www.landofcode.com/java/java-conditional-logic.php">Online Tutorial - LandOfCode</a></p>
+<p><a href="http://www.cafeaulait.org/javatutorial.html">Online Java Tutorial - Cafe Au Lait</a></p>
+ <p>Text - <strong>Java Concepts</strong> by <em>Cay Horstmann</em> (Chapter 6 - Decisions) *We have six copies of this book in the computer lab*</p>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</body>
+</html>

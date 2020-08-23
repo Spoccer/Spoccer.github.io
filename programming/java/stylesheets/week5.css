@@ -1,0 +1,82 @@
+.quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+.item {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border-bottom-style: double;
+	border-top-color: #0033FF;
+	border-right-color: #0033FF;
+	border-bottom-color: #0033FF;
+	border-left-color: #0033FF;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 5px;
+	padding: 3px;
+	list-style-image: url(../images/arrow.gif);
+}
+
+.callout {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	background-color: #FFFFCC;
+	padding: 24px;
+	float: right;
+	width: 35%;
+	border-top-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	border-left-width: 4px;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #CCCC33;
+	border-right-color: #CCCC33;
+	border-bottom-color: #CCCC33;
+	border-left-color: #CCCC33;
+	height: auto;
+	margin-top: 15px;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	margin-left: 6px;
+	text-align: justify;
+}
+.rules {
+	position: fixed;
+	width: 50%;
+	float: left;
+	margin: 20px;
+	padding: 20px;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #0066CC;
+	border-bottom-style: dashed;
+	border-bottom-color: #FFFFCC;
+}
+img {
+	padding: 4px;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #0066FF;
+}
+a:hover {
+	font-weight: bold;
+	color: #0066CC;
+}
+a:visited {
+	color: #000099;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Java - Conditional Logic - Student Manual</title>
+<link href="../stylesheets/id572.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Lesson 1 - Using an IDE</h1>
+<p class="toc">TABLE OF CONTENTS: <a href="#intro">Introduction</a> - <a href="#boolean">Section 1: Install BlueJ</a> - <a href="#conditional">Section 2: Compile and Run</a> - <a href="#program">Section 3: Use the terminal window</a></p>
+<h2><a name="intro" id="intro"></a>Introduction - </h2>
+<p>I hope that you are excited about getting started with programming in Java! We are going to hit the ground running. You are going to write your first (simple) Java program in this first lesson. It doesn't matter whether you are an experienced programmer or a complete novice, the instructions in this lesson will quickly get you to the goal of writing your first program. </p>
+<p>Whenever you have something you want to make, in order to succeed it is important to have the right tools for the job. If you are going to paint a room, you'll need brushes, rollers, stir sticks, drop cloths... Without those tools you'll have a real mess and fingerpaint on the walls. </p>
+<p>As rookie Java programmers you are no different. You need the right tools for the job. When we write programs we will be using an IDE (integrated development environment) called BlueJ. It is specifically designed for students learning Java and provides a visually appealing programming environment and takes care of many of the details involved with testing and running a Java program. </p>
+<p>In this lesson you will download BlueJ to your computer (it's free!) and learn how to use it. You'll also write your first programs and ay &quot;Hello&quot; to the programming world!!!</p>
+<h2>Pre-requisites - </h2>
+<p>There are no computer knowledge pre-requisites for this lesson, however a good understanding of algebra and logic will be needed to succeed in this course. Whenever you have questions, I encourage you to ask questions of your fellow students and learning leader to help you along the way. </p>
+<h2>Goals - </h2>
+ <ol>
+   <li> <a href="#boolean">Students will be able to download and run BlueJ IDE software on their own computer.</a>  </li>
+   <li> <a href="#conditional">Students will use BlueJ to compile and run simple &quot;Hello World&quot; programs.</a>  </li>
+   <li> <a href="#program">Students will be able to use the terminal window to interact with &quot;Hello World&quot; programs.</a></li>
+ </ol>
+ <h1><a name="boolean" id="boolean"></a>Section 1: Getting started with an IDE</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+  <br /> 
+  Install BlueJ IDE software onto your personal computer.<br />
+  <br />
+  Get aquainted with the BlueJ interface.<br />
+</p>
+<p>First we need to get the required software onto your computer. </p>
+<p>Go to the <a href="http://www.bluej.org">BlueJ</a> website, and select Download from the menu. You should come to a screen similar to this. There are TWO programs that you will need to download: </p>
+<ul>
+  <li>BlueJ installation package (Choose the version that will work with your computer's operating system.)</li>
+  <li>Java SDK (The instructions for this are shown in the gray box on the right.) </li>
+</ul>
+<p>A screen shot of the BlueJ site is shown below, however you should be aware that this site is updated often and may not look exactly like the image below when you visit it. </p>
+<p><img src="../images/bluej1.jpg" alt="BlueJ download" width="706" height="554" /></p>
+<p>Once you have each of the installation programs downloaded, run them and select the defaults to install them onto your computer. </p>
+<p>Remember, your fellow students, the discussion boards and your instructor are always ready to help you. </p>
+<p>Once you have both programs installed, run BlueJ. The first time that you run it you will have to select a version of Java to use. (Just choose the highest number if you get more than one option.) You will also have to create a new project. Select <strong>Project-New</strong> and name your project. (Be sure to also select/create a folder to store your programming work in.) Your BlueJ interface should look like this: </p>
+<p><img src="../images/bluej2.jpg" alt="BlueJ IDE" width="492" height="427" /></p>
+<p>Take a while to look through the menu and get yourself familiar with the environment. Click some buttons! Try it out! </p>
+<p>Now that we have BlueJ up and running let's get started with our first program... </p>
+<h1><a name="conditional" id="conditional"></a>Section 2: Compile and run &quot;Hello World&quot;</h1>
+ <p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br />
+     Given the starter code and instructions, use BlueJ to write, compile and run your first &quot;Hello World&quot; program. <br />
+</p>
+ <p>The basic building block of java programming is a class. To create a new class, click the <strong>New Class</strong> button on the left of the IDE. </p>
+ <p>We will name our new class HelloWorld (no spaces!) </p>
+ <p><img src="../images/bluej3.jpg" alt="New Class" width="236" height="308" /></p>
+ <p>The IDE will now show the icon for a new class titled HelloWorld. Right-click on the icon and select Open Editor (or just double-click on it) </p>
+ <p><img src="../images/bluej4.jpg" alt="IDE with class" width="493" height="428" /></p>
+ <p>When you open the editor it will be full of example code. We would like to code from scratch today, so you can start by erasing all the code in the window. In the next unit we will learn many of the details about classes, however for this program you will need to just copy the code below. </p>
+ <pre>// My first program!!!
+
+<br />public class HelloWorld
+{
+    public static void main(String[] args)
+    {
+         System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</pre>
+ 
+ <p>Once you have entered the code, you can return to the project window and click the <strong>Compile </strong>button </p>
+ <p>There are two things that might occur: </p>
+ <ul>
+   <li>An error message is created and you are brought back to the editor window. (You will need to make sure you have copied the code exactly - perhaps copy it directly from this page and paste it!) </li>
+   <li>The diagonal striped lines go away and you have successfully compiled your program. </li>
+ </ul>
+ <p>Compiling a program converts it from the words and symbols that programmers understand (and you soon will too) to a level where the computer can use it. </p>
+ <p>Now you are ready to run your program. Right click on the HelloWorld icon and select<strong> void main (String[] args)</strong> this will run the main method in your HelloWorld class. </p>
+ <p><img src="../images/bluej5.jpg" alt="Run it!" width="494" height="431" /></p>
+ <p>A terminal window will pop-up and display &quot;HelloWorld&quot; just as your program asked it to!</p>
+ <p>Congratulations! You have written your first program. </p>
+ <p>Now that you run your first program, let's make it interactive!... </p>
+<h1><a name="program" id="program"></a>Section 3: Use the terminal window to interact</h1>
+<p class="objectives"><strong>This is your objective for this section:<br />
+  <br />
+</strong>Make an 'advanced' version of the HelloWorld class that interacts with the user. 
+  <br />
+</p>
+<p>Let's add a few things to make the code more interactive. Again, remember that you are not expected to understand any of this code - we're just getting used to using BlueJ. However, you should be able to understand some of the concepts. </p>
+ <pre>// My first program!!!
+import java.util.Scanner;<br /><br />public class HelloWorld
+{
+    public static void main(String[] args)
+    {
+       //Creates a Scanner object connected to the system input (keyboard)
+       Scanner keyboard = new Scanner(System.in);
+   
+       //Display a prompt to the user.
+       System.out.println(&quot;What is your name?&quot;);
+   
+       //Get the username from the keyboard.
+       String userName = keyboard.next();
+   
+       //Display a personalized message.
+       System.out.println(&quot;Hello, &quot;+userName);
+    }
+} </pre>
+ <p>When you run this program, it should ask the user their name, wait for them to type it, and then display a personalized message. It is easy to follow the code since it is full of comments. Comments are put into code to make it easier to read, but are ignored by the compiler. They are just notes to programmers. The comments in this program all start with two slashes ( // ). </p>
+ <p>&nbsp;</p>
+ <h2>Here are a few programming challenges for you to try:</h2>
+ <p class="quote">(This assignment is worth 50 points. You must complete each of the following programs)</p>
+ <ul>
+   <li>Change some of the text that is displayed.<br />
+   </li>
+   <li>Add some lines to make more of a conversation. </li>
+   <li>Ask the user more than one question. </li>
+ </ul>
+<p>&nbsp;</p>
+<h1>Helpful References</h1>
+ <p><a href="http://www.bluej.org">BlueJ</a></p>
+ <p><a href="http://www.cs.ccsu.edu/~jones/book.htm">Java Au Naturel</a></p>
+ <p><a href="http://www.landofcode.com/java/java-conditional-logic.php">Online Tutorial - LandOfCode</a></p>
+<p><a href="http://www.cafeaulait.org/javatutorial.html">Online Java Tutorial - Cafe Au Lait</a></p>
+ <p>Text - <strong>Java Concepts</strong> by <em>Cay Horstmann</em> (Chapter 6 - Decisions) *We have six copies of this book in the computer lab*</p>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</body>
+</html>

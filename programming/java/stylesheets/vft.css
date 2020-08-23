@@ -1,0 +1,176 @@
+.standout {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #9966FF;
+}
+.standardBold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.standards {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+.quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+.item {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border-bottom-style: double;
+	border-top-color: #0033FF;
+	border-right-color: #0033FF;
+	border-bottom-color: #0033FF;
+	border-left-color: #0033FF;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+}
+td {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+td.rubric {
+	background-color: #AA99FF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+td.rubricSide {
+	background-color: #9966FF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+b {
+	font-weight: bold;
+	color: #5C00C4;
+}
+
+li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 5px;
+	padding: 3px;
+	list-style-image: none;
+	list-style-type: square;
+}
+
+.callout {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	background-color: #FFFFCC;
+	padding: 24px;
+	float: right;
+	width: 35%;
+	border-top-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	border-left-width: 4px;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #CCCC33;
+	border-right-color: #CCCC33;
+	border-bottom-color: #CCCC33;
+	border-left-color: #CCCC33;
+	height: auto;
+	margin-top: 15px;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	margin-left: 6px;
+	text-align: justify;
+}
+.bottomline {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 10px;
+	background-color: #9999FF;
+	border: thin solid #000000;
+}
+
+.rules {
+	position: fixed;
+	width: 50%;
+	float: left;
+	margin: 20px;
+	padding: 20px;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #000000;
+	border-bottom-style: dashed;
+	border-bottom-color: #9966FF;
+}
+img {
+	padding: 4px;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	background-color: #CCCCCC;
+	border-bottom-style: groove;
+	border-bottom-color: #9966FF;
+	font-variant: small-caps;
+}
+a.computer:hover {
+	font-weight: bold;
+	color: #0066CC;
+	border: thin solid #FF0000;
+}
+a:hover {
+	font-weight: bold;
+	color: #0066CC;
+}
+a:visited {
+	color: #000099;
+}
+
+a.ovalbutton{
+background: transparent url('../images/oval-gray-left.gif') no-repeat top left;
+display: block;
+float: left;
+font: normal 13px Tahoma; /* Change 13px as desired */
+line-height: 16px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 24px) */
+height: 24px; /* Height of button background height */
+padding-left: 11px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
+color: #494949; /*button text color*/
+}
+
+a.ovalbutton span{
+background: transparent url('../images/oval-gray-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0; /*Set 11px below to match value of 'padding-left' value above*/
+}
+
+a.ovalbutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.ovalbutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: black;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+}
+area.computer:hover {
+	border: thin solid #FF0000;
+}

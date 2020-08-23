@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Java - Conditional Logic - Student Manual</title>
+<link href="../stylesheets/id572.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body>
+<h1>Lesson 5 - Arrays</h1>
+<p class="toc">TABLE OF CONTENTS: <a href="#intro">Introduction</a> - <a href="#sec1">Arrays</a> - <a href="#sec2">ArrayList</a></p>
+<h2><a name="intro" id="intro"></a>Introduction - </h2>
+<p>We've talked in previous lessons about computers being useful for processing large amounts of data. One simple task that you might need to accomplish is sorting a set of data. We already know enough to accomplish this, but it will be rather inefficient. The code below will sort five integer values from lowest to highest...</p>
+<pre>int first = 2;
+int second = 6;
+int third = 4;
+int fourth = 1;
+int fifth = 3;
+
+
+if (first &gt; second)
+	swap(first, second);
+
+if (second &gt; third)
+	swap(second, third);
+if (third &gt; fourth)
+	swap(third, fourth);
+if (fourth &gt; fifth)
+	swap(fourth, fifth);
+
+//At this point all you have guaranteed is that the highest value is in fifth.
+
+if (first &gt; second)
+	swap(first, second);
+if (second &gt; third)
+	swap(second, third);
+if (third &gt; fourth)
+	swap(third, fourth);
+
+if (first &gt; second)
+	swap(first, second);
+
+if (second &gt; third)
+	swap(second, third);
+if (first &gt; second)
+	swap(first, second);
+</pre>
+<p>After all of that you have sorted a list of five elements. But what if the list had ten elements? What if it had 1000? 1,000,000? </p>
+<p>This method of coding would not be efficient - we would need a better way of organizing and accessing the data than giving every piece of data it's own identifier. We would need <span class="quote">arrays</span>.</p>
+<h2>Pre-requisites - </h2>
+<p>Before beginning this lesson you should  have completed each of the previous lessons.  (This lesson will build upon previous concepts and many of them will be necessary to implement arrays.) </p>
+<h2>Goals - </h2>
+ <ol>
+   <li>Students will use correct syntax when working with arrays in Java.  </li>
+   <li>Students will be able to use simple arrays and the ArrayList class to organize data within a Java program. </li>
+ </ol>
+<h1><a name="sec1" id="sec1"></a>Section 1: Arrays</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+  <br />
+  Given a output description and a section of code with a  missing line, students will be able to fill in array statements  that would accomplish the task without producing errors. <br />
+  <br />
+Given sections of code that includes arrays, students will identify and correct the error in the code or identify  the code as correct.  Possible errors to  be tested would include – index out of bounds, use of length,  syntax errors.  </p>
+<p>An array is a data structure used to organize list of data of the same type. Any type (or class) can be used in an array. For the example above, using five different variable names for the five scores in the list made the program become cumbersome. A single array of integers would make this program much easier. </p>
+<pre>int[] scores = new int[5];</pre>
+<p>This declares a single variable called scores, however it allocates space for an array of five integers. </p>
+<p>Each of the elements of the array can be accessed using the following notation: </p>
+<pre>variableName[index]</pre>
+<p>in this case</p>
+<pre>scores[0]</pre>
+<p>The number inside the square brackets is the index into the array. It tells which element of the array to use. Arrays always start numbering at zero. So an array with five elements would use indeces 0-4.</p>
+<p>The cool thing about arrays is that we can use a variable in place of the index. Combine this with a nice for loop and you've got a quick and easy way to access all the elements of an array. </p>
+<pre>for(int index=0; index &lt; 5; index++)
+{
+	scores[index] = randy.nextInt(100);
+}</pre>
+<p>The code above would fill the array with random integers. </p>
+<p>There are many different ways to sort a list of integers. One of the most simple is the swap sort (which is what we tried above in the introduction.) We'll try it again here using arrays. </p>
+<pre>public class ArrayDemo
+{
+	int NUMBER_OF_SCORES = 5; //notice how identifiers for constants are in all CAPS
+	int[] scores = new int[NUMBER_OF_SCORES];
+
+
+	public void fillArray()
+	{
+		for(int index=0; index &lt; NUMBER_OF_SCORES; index++)
+		{
+			scores[index] = randy.nextInt(100);
+		}
+	}
+
+	public void displayArray()
+	{
+		for(int index=0; index &lt; NUMBER_OF_SCORES; index++)
+		{
+			System.out.print(&quot; &quot;+scores[index]);
+		}
+		System.out.println(&quot;  Done.&quot;);
+	}
+
+	public void swapSort()
+	{
+		for(int x=0;x&lt;NUMBER_OF_SCORES;x++)
+		{
+			for(int y=0;y&lt;NUMBER_OF_SCORES-1;y++)
+			{
+				if(scores[y] &lt; scores[y+1])
+					swap(y,y+1);
+			}
+		}
+	}
+
+	public void swap(int one, int two)
+	{
+		int temp = scores[one];
+		scores[one] = scores[two];
+		scores[two] = temp;
+	}		</pre>
+
+<p>&nbsp;</p>
+<h1><a name="sec2" id="sec2"></a>Section 2: The ArrayList class</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+     <br />
+After reading this lesson, students will know the difference between simple arrays and ArrayList objects.<br />
+</p>
+<p>Another version of arrays is available using the ArrayList class which can be found in the Java API. The ArrayList class allows arrays to be dynamic in size while a program runs rather than having to be declared with a fixed size. The ArrayList class also provides many methods that make it easier to access the array. </p>
+<p></p>
+<h2>Here are a few programming challenges for you to try:</h2>
+ <p class="quote">(This assignment is worth 90 points. You must complete each of the following programs)</p>
+ <ol>
+   <li>Write a tester class that exercises an ArrayDemo objects. </li>
+   <li>Add a method to the ArrayDemo class that finds the maximum value in the array and displays it. </li>
+   <li>Add a method to the ArrayDemo class that finds the sum of all the elements in the array and returns it as an int.</li>
+ </ol>
+<h1>Helpful References</h1>
+ <p><a href="http://www.bluej.org" target="_blank">BlueJ</a></p>
+ <p><a href="http://www.cs.ccsu.edu/~jones/book.htm" target="_blank">Java Au Naturel</a></p>
+ <p><a href="http://java.sun.com/j2se/1.5.0/docs/api/" target="_blank">Java API</a></p>
+<p><a href="http://www.landofcode.com/java/java-conditional-logic.php">Online Tutorial - LandOfCode</a></p>
+<p><a href="http://www.cafeaulait.org/javatutorial.html">Online Java Tutorial - Cafe Au Lait</a></p>
+ <p>Text - <strong>Java Concepts</strong> by <em>Cay Horstmann</em> (Chapter 6 - Decisions) *We have six copies of this book in the computer lab*</p>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</body>
+</html>

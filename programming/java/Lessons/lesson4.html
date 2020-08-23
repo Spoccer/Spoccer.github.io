@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Java - Conditional Logic - Student Manual</title>
+<link href="../stylesheets/id572.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body>
+<h1>Lesson 4 - Iteration</h1>
+<p class="toc">TABLE OF CONTENTS: <a href="#intro">Introduction</a> - <a href="#sec1">while loops</a> - <a href="#sec2">for loops</a> - <a href="#sec3">do-while loops</a> - <a href="#sec4">Choosing the best iteration type</a></p>
+<h2><a name="intro" id="intro"></a>Introduction - </h2>
+<p>Computers are designed to perform many calculations very quickly. They are efficient and save us time. We also want to be efficient as programmers. Iteration (or looping statements) allow us to tell the computer to do something many times. There are three main types of iteration statements that we will work with: </p>
+<ul>
+  <li>while (continues until a condition is met)</li>
+  <li>for </li>
+  <li>do-while</li>
+</ul>
+<h2>Pre-requisites - </h2>
+<p>Before beginning this lesson you should  have completed the HelloWorld2 program.  (This would give you experience using  the programming environment and structuring simple programs.) You should also have a basic understanding of objects and variables  (although not mastery yet.) Finally, you need an understanding of conditional logic, as it is used to decide how long to keep a loop going for.   </p>
+<h2>Goals - </h2>
+ <ol>
+   <li>Students will use correct syntax when writing iteration statements in Java.</li>
+   <li>Students will be able to use iteration statements within Java programs to accomplish tasks efficiently.</li>
+ </ol>
+<h1><a name="sec1" id="sec1"></a>Section 1: While loops</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+  <br />
+  Given an output description and a section of code with a  missing line, students will be able to fill in a while statement  that would accomplish the task without producing errors. <br />
+  <br />
+Given a section of code that includes a while loop, students will identify the outcome of that section of code.<br />
+</p>
+<p>In Java, we can write while loops that will make sections of code repeat as long as a condition is met. Here is how this would work. </p>
+<pre>while(condition)
+     statement; 
+</pre>
+--or--
+<pre>
+while(condition)
+{
+     statement1; 
+     statement2; 
+     statement3; 
+
+}</pre>
+<p>The statement(s) would only be run if the condition evaluated to true. </p>
+<pre>while(game.score &lt; 100)
+    game.playNextTurn();</pre>
+<p>In this example, if the variable <span class="javacode">score</span> from the game object is less than 100, the playNextTurn method would be called from the game object. However if the score was equal to or above 100, the program would continue without running the playNextTurn method. <span class="javacode"></span></p>
+<pre>while(count &lt; 10)
+    System.out.println(&quot;The count is: &quot;+count);</pre>
+<p>In this example, if the variable <span class="javacode">count</span> was less than 10, the terminal window would display <span class="javacode">The count is #</span>, since there is nothing in the loop to change the value of count, it would keep displaying forever! </p>
+<p>Sometimes you have multiple lines of code that you want to execute within the loop. You can always group together sections of code using curly brackets { }. </p>
+<pre>int count = 1;
+
+while(count &lt;= 10)
+{
+     System.out.println(&quot;The count is: &quot;+count);
+     count = count + 1;
+}</pre>
+<p>This example (above) of code would run all three statements within the curly brackets only if the condition was met. However, the example below would loop forever because the line that increases count is not included within the while loop. Remember unless you use curly brackets, the while statement ends at the semicolon. </p>
+<pre class="badcode">int count = 1;
+
+while(count &lt;= 10)
+     System.out.println(&quot;The count is: &quot;+count);
+     count = count + 1;</pre>
+<h2>Practice</h2>
+<p><strong>Find and correct the errors in the following pieces of code:</strong></p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+  <tr>
+    <td><pre class="table">while(number = 5) 
+    System.out.println(&quot;correct.&quot;);</pre></td>
+    <td><pre class="answer">while(number == 5) //Two equals signs to compare.
+      System.out.println(&quot;correct.&quot;);</pre></td>
+  </tr>
+  <tr>
+    <td><pre class="table">while(true);
+    System.out.println(&quot;goes forever!&quot;);</pre></td>
+    <td><pre class="answer">while(true) //semicolon here makes it do nothing
+    System.out.println(&quot;goes forever!&quot;);</pre></td>
+  </tr>
+  <tr>
+    <td><pre class="table"
+    >// counting to five
+
+int count = 1;
+
+while(count &lt;=5)
+
+    System.out.println(count);
+
+    count = count + 1;</pre>    </td>
+    <td><pre class="answer"
+    >// counting to five
+
+int count = 1;
+
+while(count &lt;=5)
+{ //Need the curly brackets to group statements.
+    System.out.println(count);
+    count = count + 1;
+}</pre>
+    </td>
+  </tr>
+</table>
+<h1><a name="sec2" id="sec2"></a>Section 2: For loops</h1>
+<p class="objectives"><strong>These are your objectives for this section:</strong><br />
+     <br />
+     Given an output description and a section of code with a  missing line, students will be able to fill in a for statement  that would accomplish the task without producing errors. <br />
+     <br />
+Given a section of code that includes a for loop, students will identify the outcome of that section of code.</p>
+<p>In Java, we can write for loops that will make sections of code repeat until a condition is met. For loops are different than while loops in that you specify initial conditions and an iterator. Here is how this would work. </p>
+<pre>for(initial assignment ;  condition ; iterator)
+     statement; 
+</pre>
+--or--
+<pre>for(initial assignment ;  condition ; iterator)
+{
+     statement1; 
+     statement2; 
+     statement3; 
+
+}</pre>
+<p>The statement(s) would only be run if the condition evaluated to true. </p>
+<pre>for(count=0 ; count&lt;10 ; count=count+1)
+    System.out.println(count);</pre>
+<p>To evaluate this example let's look at it in stages...</p>
+<ul>
+  <li>First, the initial assignment is made and count is set to zero. </li>
+  <li>The condition is checked to determine whether to continue or end the loop.</li>
+  <li>The statement(s) within the loop are run</li>
+  <li>The iterator statment increases the value of count by one. At this point return to step two to check the condition again...</li>
+</ul>
+<p>So this section of code should print out the numbers from 0 to 9. </p>
+<p>There are many things that you can change about a for loop. For example, the count varaible can have any vaid name, it can start and end at any value you choose and it can change each step up or down by any value you choose...<span class="javacode"></span></p>
+<pre>for(joe=20 ; joe&gt;4 ; joe=joe-2)
+    System.out.println(joe);</pre>
+<p>This would print out 20 - 18 - 16 - 14 - 12 - 10 - 8 - 6 (each on separate lines.) </p>
+<p>Sometimes you have multiple lines of code that you want to execute within the loop. You can always group together sections of code using curly brackets { }. </p>
+<pre>for(int count=0 ; count&lt;10 ; count=count+1)
+{
+     System.out.println(&quot;The count is:&quot;);
+     System.out.println(count);
+}</pre>
+<p>This example (above) of code would run both statements within the curly brackets each time it ran through the loopHowever, the example below would only display &quot;The count is:&quot; multiple times and then print the count (10) once. This is because the line that displays the count is not included within the while loop. Remember unless you use curly brackets, the while statement ends at the semicolon. </p>
+<pre class="badcode">for(int count=0 ; count&lt;10 ; count=count+1)
+     System.out.println(&quot;The count is:&quot;);
+     System.out.println(count);
+</pre>
+<h2>Increment and Decrement operators</h2>
+<p>As programmers we're always looking for ways to make things easier. We want to make the computer do all the work, not us :-) Anyway, there are shortcuts whenever you want to change the value of an integer variable by one. (This often happens in for loops.) </p>
+<p><strong>The increment operator ++</strong> (two plus signs) will increase an integer variable by one. </p>
+<p>So instead of </p>
+<pre>count = count + 1;</pre>
+<p>you can use </p>
+<pre>count++;</pre>
+<p><strong>The decrement operator --</strong> (two minus signs) will decrease an integer variable by one. </p>
+<h2>Nested loops</h2>
+<p>Sometimes it is useful to put a loop inside another loop. This is called a nested loop. It is always legal, but you have to be really careful with your curly brackets. </p>
+<pre>for(int row=0; row&lt;5; row++)
+{
+	for(int col=0; col&lt;=row; col++) //Notice the condition is dependent on row.
+	{
+		System.out.print(&quot;*&quot;);
+	}
+	System.out.println(&quot;-&quot;);
+}</pre>
+<p>Try that code out and see what it does! </p>
+<h2>Practice</h2>
+<p><strong>What would be the output from the following pieces of code:</strong></p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+  <tr>
+    <td><pre class="table">for(int x=0;x&lt;3;x++) 
+    System.out.println(&quot;#&quot;+x);</pre></td>
+    <td><pre class="answer">#0
+#1
+#2</pre></td>
+  </tr>
+  <tr>
+    <td><pre class="table">for(int x=4;x&lt;3;x++) 
+    System.out.println(&quot;#&quot;+x);</pre></td>
+    <td><pre class="answer">No output, the condition is never met.</pre></td>
+  </tr>
+  <tr>
+    <td><pre class="table">for(int x=1;x&lt;25;x++); 
+    System.out.println(&quot;#&quot;+x);</pre></td>
+    <td><pre class="answer">#25<br />(There's a semicolon on the for statement.
+ The loop finishes before reaching the println.)</pre></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h1><a name="sec3" id="sec3"></a>Section 3: Do-while loops</h1>
+<p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br />
+     Given an output description and a section of code with a  missing line, students will be able to fill in a do-while statement  that would accomplish the task without producing errors. <br />
+     <br />
+Given a section of code that includes a do-while loop, students will identify the outcome of that section of code.</p>
+<p>In Java, we can write do-while loops that will always run once and then make sections of code repeat as long as a condition is met. Here is how this would work. </p>
+ <pre>do
+{
+	statement1; 
+	statement2; 
+	statement3; 
+
+} while(condition); </pre>
+ <p>The statement(s) would always be run once and then continue to run if the condition evaluated to true. </p>
+ <pre>
+String password = &quot;awesome&quot;;
+
+do
+{
+    System.out.println(&quot;Please enter the password&quot;);
+    String entry = keyboard.next();
+} while (!entry.equals(password));</pre>
+ <p>In this example, the user is always asked at least once to type the password. The loop will continue to ask for the password if the password is not correct. <span class="javacode"></span></p>
+ <h1><a name="sec4" id="program2"></a>Section 4: Choosing the best loop for the situation</h1>
+<p class="objectives"><strong>This is your objective for this section:</strong><br />
+     <br />
+ Given a specification, write a program that produces the correct output (e.g. a sequence or sum) based on a user input (e.g. number to count to).  The program must run without errors and  produce the correct output in every possible test case. </p>
+<p>Now you have three different types of looping statements (while, for and do-while.) You can use any of them to accomplish most everything you want to use a loop for, but typically while loops are used when the number of iterations can vary while for loops work best for a fixed number of iterations. </p>
+ <p>&nbsp;</p>
+<h2>Here are a few programming challenges for you to try:</h2>
+ <p class="quote">(This assignment is worth 90 points. You must complete three of the following programs)</p>
+ <ol>
+   <li>Write a program that asks the user for an integer and then prints out all of the factors of that number.</li>
+   <li>Write a program that prints all of the prime numbers up to 500. (And the program has to calculate them!) </li>
+   <li>Write a program that counts in Roman numerals up to 100. </li>
+   <li>Write a guess the number game that plays until you get the right number. Give a hint of &quot;too high&quot; or &quot;too low&quot; after each wrong guess. </li>
+ </ol>
+<h1>Helpful References</h1>
+ <p><a href="http://www.bluej.org" target="_blank">BlueJ</a></p>
+ <p><a href="http://www.cs.ccsu.edu/~jones/book.htm" target="_blank">Java Au Naturel</a></p>
+ <p><a href="http://java.sun.com/j2se/1.5.0/docs/api/" target="_blank">Java API</a></p>
+<p><a href="http://www.landofcode.com/java/java-conditional-logic.php">Online Tutorial - LandOfCode</a></p>
+<p><a href="http://www.cafeaulait.org/javatutorial.html">Online Java Tutorial - Cafe Au Lait</a></p>
+ <p>Text - <strong>Java Concepts</strong> by <em>Cay Horstmann</em> (Chapter 6 - Decisions) *We have six copies of this book in the computer lab*</p>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</body>
+</html>

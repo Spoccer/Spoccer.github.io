@@ -1,0 +1,229 @@
+.quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	background-color: #9966FF;
+}
+.item {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border-bottom-style: double;
+	border-top-color: #9966FF;
+	border-right-color: #9966FF;
+	border-bottom-color: #9966FF;
+	border-left-color: #9966FF;
+}
+body{
+	margin: 15px;
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+}
+tr.gray {
+	background-color: #DBDBDB;
+	border-top-color: #9966FF;
+	border-right-color: #9966FF;
+	border-bottom-color: #9966FF;
+	border-left-color: #9966FF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+td.cool {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #9966FF;
+	background-position: center;
+	text-align: center;
+}
+
+b {
+	font-weight: bold;
+	color: #5C00C4;
+}
+
+li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 5px;
+	padding: 3px;
+	list-style-type: square;
+}
+li.goal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 5px;
+	padding: 3px;
+	list-style-type: square;
+	background-color: #9966FF;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #9966FF;
+}
+
+
+.callout {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	background-color: #FFFFCC;
+	padding: 24px;
+	float: right;
+	width: 35%;
+	border-top-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	border-left-width: 4px;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #CCCC33;
+	border-right-color: #CCCC33;
+	border-bottom-color: #CCCC33;
+	border-left-color: #CCCC33;
+	height: auto;
+	margin-top: 15px;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	margin-left: 6px;
+	text-align: justify;
+}
+.bottomline {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 10px;
+	background-color: #9999FF;
+	border: thin solid #000000;
+}
+
+.rules {
+	position: fixed;
+	width: 50%;
+	float: left;
+	margin: 20px;
+	padding: 20px;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #000000;
+	border-bottom-style: dashed;
+	border-bottom-color: #9966FF;
+}
+img {
+	padding: 4px;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	background-color: #CCCCCC;
+	border-bottom-style: groove;
+	border-bottom-color: #9966FF;
+	font-variant: small-caps;
+}
+a.computer:hover {
+	font-weight: bold;
+	color: #0066CC;
+	border: thin solid #FF0000;
+}
+a:hover {
+	font-weight: bold;
+	color: #0066CC;
+}
+a:visited {
+	color: #000099;
+}
+
+a.ovalbutton{
+background: transparent url('../images/oval-gray-left.gif') no-repeat top left;
+display: block;
+float: left;
+font: normal 13px Tahoma; /* Change 13px as desired */
+line-height: 16px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 24px) */
+height: 24px; /* Height of button background height */
+padding-left: 11px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
+color: #494949; /*button text color*/
+}
+
+a.ovalbutton span{
+background: transparent url('../images/oval-gray-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0; /*Set 11px below to match value of 'padding-left' value above*/
+}
+
+a.ovalbutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.ovalbutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: black;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+}
+area.computer:hover {
+	border: thin solid #FF0000;
+}
+.objectives {
+	background-color: #CCCCFF;
+	border: thin solid #000000;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	padding: 10px;
+	width: auto;
+	margin: 15px;
+}
+.toc {
+	color: #9966FF;
+	background-color: #FFFFCC;
+	padding: 3px;
+}
+.javacode {
+	font-family: "Courier New", Courier, monospace;
+}
+pre {
+	background-color: #FFFFCC;
+	width: 90%;
+
+}
+pre.answer {
+	color: #FFFFFF;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+pre.badcode {
+	background-color: #CCCCFF;
+	width: 70%;
+}
+pre.table {
+	background-color: #FFFFCC;
+	width: 100%;
+}
+.topLine {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-style: normal;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: medium;
+	border-left-width: 1px;
+	border-top-color: #FFFFCC;
+	border-right-color: #FFFFCC;
+	border-bottom-color: #9966FF;
+	border-bottom-style: dashed;
+	background-color: #FFFFCC;
+	font-weight: bolder;
+	padding: 6px;
+	margin: 0px;
+	text-align: center;
+}
