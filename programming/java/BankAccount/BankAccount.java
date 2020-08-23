@@ -1,5 +1,5 @@
 /*
- *  Bank Account class - DEMO by Spock 8-23-20
+ *  Bank Account class - DEMO by Spock 8-23-20 
  */
 
 public class BankAccount
