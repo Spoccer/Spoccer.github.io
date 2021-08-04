@@ -101,7 +101,7 @@ var movingAverageOfDailyPositiveCasesInBarthCo = barthCoAvgSlider.value;
 var BARTH_CO_POP = 84000;
 var probOfStartingWithCOVID = (movingAverageOfDailyPositiveCasesInBarthCo*1.0/BARTH_CO_POP); 
 var probOfBeingAsymptomatic = .45; //Estimate, cite a source
-var probOfStartingImmune = .028; //From a study
+var probOfStartingImmune = .428; //From a study
 var probOfGettingCOVIDfromOUTSIDEschoolPerDay = probOfStartingWithCOVID; 
     //about the SCHOOL
 var totalNumberOfPeople = numStudentsSlider.value;
