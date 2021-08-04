@@ -101,13 +101,13 @@ var movingAverageOfDailyPositiveCasesInBarthCo = barthCoAvgSlider.value;
 var BARTH_CO_POP = 84000;
 var probOfStartingWithCOVID = (movingAverageOfDailyPositiveCasesInBarthCo*1.0/BARTH_CO_POP); 
 var probOfBeingAsymptomatic = .45; //Estimate, cite a source
-var probOfStartingImmune = percentVaccinatedSlider.value/100.0;
+var probOfStartingImmune = .42;//percentVaccinatedSlider.value/100.0;
 var probOfGettingCOVIDfromOUTSIDEschoolPerDay = probOfStartingWithCOVID; 
     //about the SCHOOL
 var totalNumberOfPeople = numStudentsSlider.value;
 var avgNumCloseContacts = closeContactsSlider.value; 
 var avgNumFarContacts = farContactsSlider.value;   
-var avgNumHallwayContacts = 0;//hallwayContactsSlider.value; 
+var avgNumHallwayContacts = 10;//hallwayContactsSlider.value; 
 var avgNumLunchContacts = 5;  //####
     //about TRANSMISSION RATES
 var nr3 = .005*transmissionRateSlider.value; //makes R=2-6 range without masks.
