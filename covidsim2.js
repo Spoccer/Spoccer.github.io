@@ -101,7 +101,7 @@ var movingAverageOfDailyPositiveCasesInBarthCo = barthCoAvgSlider.value;
 var BARTH_CO_POP = 84000;
 var probOfStartingWithCOVID = (movingAverageOfDailyPositiveCasesInBarthCo*1.0/BARTH_CO_POP); 
 var probOfBeingAsymptomatic = .45; //Estimate, cite a source
-var probOfStartingImmune = .42;//percentVaccinatedSlider.value/100.0;
+var probOfStartingImmune = percentVaccinatedSlider.value/100.0;
 var probOfGettingCOVIDfromOUTSIDEschoolPerDay = probOfStartingWithCOVID; 
     //about the SCHOOL
 var totalNumberOfPeople = numStudentsSlider.value;
@@ -135,8 +135,9 @@ function updateValues()
   totalNumberOfPeople = numStudentsSlider.value;
   avgNumCloseContacts = closeContactsSlider.value; 
   avgNumFarContacts = farContactsSlider.value;   
-  avgNumHallwayContacts = hallwayContactsSlider.value; 
-  
+  //avgNumHallwayContacts = hallwayContactsSlider.value; 
+  probOfStartingImmune = percentVaccinatedSlider.value/100.0;
+
   nr3 = .005*transmissionRateSlider.value; //makes R=2-6 range without masks.
   hall = 10;  //How much less likely a hallway transmission is than a close prox xmit.
                               //close/far/hall
