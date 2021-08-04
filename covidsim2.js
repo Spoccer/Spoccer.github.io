@@ -72,11 +72,11 @@ temp.onclick = function()
           label: 'Currently Infected',
           data: infectedArray,
           backgroundColor: '#FA1234',
-        },
-        {
-          label: 'Recovered',
-          data: immuneArray,
-          backgroundColor: '#1234FA',
+//        },
+//        {
+//          label: 'Recovered',
+//          data: immuneArray,
+//          backgroundColor: '#1234FA',
         }
       ]
     },
