@@ -63,11 +63,11 @@ temp.onclick = function()
     data: {
       labels: labelArray,
       datasets: [
-        {
-          label: 'Clear',
-          data: clearArray,
-          backgroundColor: '#23FA33',
-        },
+//        {
+//          label: 'Clear',
+//          data: clearArray,
+//          backgroundColor: '#23FA33',
+//        },
         {
           label: 'Currently Infected',
           data: infectedArray,
