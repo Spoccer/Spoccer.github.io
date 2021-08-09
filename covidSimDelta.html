@@ -13,7 +13,7 @@
     	<input type="range" min="0" max="100" value="15" class="slider" id="barthCoAvgSlider">
     	<br><a id="slider1value"> </a> new cases per day in Barth Co. (avg.)<br><br>
 
-  	<input type="range" min="0" max="100" value="42" class="slider" id="percentStudentVaccinatedSlider">
+  	<input type="range" min="0" max="100" value="39" class="slider" id="percentStudentVaccinatedSlider">
  	<br><a id="slider2value"> </a> percent of students vaccinated/immune<br><br>
 
   	<input type="range" min="0" max="100" value="75" class="slider" id="percentAdultsVaccinatedSlider">
@@ -61,12 +61,15 @@
 <h2>Methodology</h2>
 <p>Variables you can set:</p>
 <p><strong>Number of new cases of COVID in Bartholomew County per day (7 day average).&nbsp;</strong>Students are assumed to proportionally be infected by COVID from outside of school at the same rate as others in the county.&nbsp;The average was 16 new cases per day on August 5th. This value can be found at:&nbsp;<a href="https://www.coronavirus.in.gov/">https://www.coronavirus.in.gov/</a></p>
+<p><strong>Percent of students vaccinated</strong>At 35% for ages 16-19, and 23% for ages 12-15. (8-9-21)<a href="https://www.coronavirus.in.gov/vaccine/2680.htm">Reference</a>
+<p><strong>Percent of adults vaccinated</strong>At 55% for ages 18+. (8-9-21)<a href="https://www.coronavirus.in.gov/vaccine/2680.htm">Reference</a>
+<p>Also note that 10.1% of county residents have already been diagnosed with COVID. It is unknown what percentage of this group is also vaccinated, but for this model, vaccine rates should be increased by 10.1% to account for this immunity.</p>
+<p><strong>Vaccine Efficacy</strong> For anyone that has gained an immunity to the virus either through vaccine (or suffering through COVID) there is a chance that you will still get COVID. The Pfizer vaccine is 95% effective, and the Moderna vaccine is 94.1% effective. This means 5-6% of people that would expect to be immune will still be able to contract the disease. </p>
 <p><strong>Percent of people correctly wearing masks</strong>. The goal is to keep this value high. The model assumes that wearing a mask makes you seven times less likely to transmit the virus. <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31142-9/fulltext">Source</a></p>
 <p><strong>Close contacts per day.</strong> This is a measure of social distancing. This is the number of people that are within 6 feet of a person for a sustained amount of time per day. <span style="text-decoration: underline;"><em>Keeping this number low has a strong affect on the outcome of the model.</em></span>&nbsp;</p>
 <p><strong>Distanced contacts per day.</strong> These are people that you are in the same room with for a sustained amount of time (&gt;15 minutes), but socially distanced from. The model assumes that being socially distanced makes you six times less likely to transmit the virus.&nbsp;<a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31142-9/fulltext">Source</a></p>
 <p><strong>Number of people in the school</strong>. Allows the model to be used for different schools.&nbsp;</p>
 <p><strong>Estimated R0 within the school.</strong> This relates to the transmission rate. It is the biggest unknown, and has a very strong effect. (The R0 is how many people each infected person will transmit it to with NO interventions such as masks or distancing.) Multiple sources have the R0 for COVID-19 Delta to be around 4-5, however it is unknown if a school setting is typical or would increase the R0. For that reason, it was left as a variable.&nbsp;</p>
-<p><strong>Vaccine Efficacy</strong>For anyone that has gained an immunity to the virus either through vaccine (or suffering through COVID) there is a chance that you will still get COVID. The Pfizer vaccine is 95% effective, and the Moderna vaccine is 94.1% effective. This means 5-6% of people that would expect to be immune will still be able to contract the disease. </p>
 <p><span style="text-decoration: underline;">Other assumptions:</span>&nbsp;</p>
 <p>45% of cases will be asymptomatic. (Source needed.)&nbsp;</p>
 <p>The incubation time for COVID-19 is 4-14 days. It can be transmitted during the last two days of incubation. (Source needed.)&nbsp;&nbsp;</p>
