@@ -7,7 +7,7 @@ setInterval(function () {
   imgEl.src = date.getHours() < 21 
   ? 'https://Spoccer.github.io/mp2024assets/phoneBooth.jpg' 
   : 'https://Spoccer.github.io/mp2024assets/circleK.jpeg'
-
+document.getElementById('d') = "Gooood Evening";
 if (hour >= 19) {
     document.getElementById('d').innerHTML = "Good Evening";
   } else if (hour >= 12) {
