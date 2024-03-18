@@ -1,6 +1,5 @@
 setInterval(function () {
-  var imgEl = document.getElementById('Kiss100');
-  if (!imgEl) return;
+  
   
   var date = new Date();
   var hour = date.getHours() % 4;
