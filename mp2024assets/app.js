@@ -4,12 +4,12 @@ setInterval(function () {
   
   var date = new Date();
   
-  imgEl.src = date.getHours() < 21 
+  imgEl.src = date.getHours() % 4 == 0 
   ? 'https://Spoccer.github.io/mp2024assets/phoneBooth.jpg' 
   : 'https://Spoccer.github.io/mp2024assets/circleK.jpeg'
-document.getElementById('d') = "Gooood Evening";
+document.getElementById('d').html = "Gooood Evening";
 if (hour >= 19) {
-    document.getElementById('d').innerHTML = "Good Evening";
+    document.getElementById('d').html = "Good Evening";
   } else if (hour >= 12) {
     document.getElementById('d').innerHTML = "Good Afternoon";
   } else if (hour >= 6) {
@@ -24,4 +24,4 @@ if (hour >= 19) {
     document.getElementById('d').innerHTML = "If you see this, something is wrong with the code";
   }
 
-}, 1000);
+}, 500);
