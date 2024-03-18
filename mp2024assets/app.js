@@ -4,7 +4,7 @@ setInterval(function () {
   
   var date = new Date();
   
-  imgEl.src = date.getHours() > 21 
+  imgEl.src = date.getHours() < 21 
   ? 'https://Spoccer.github.io/mp2024assets/phoneBooth.jpg' 
   : 'https://Spoccer.github.io/mp2024assets/circleK.jpeg'
 
