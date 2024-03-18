@@ -8,8 +8,7 @@ setInterval(function () {
 
   dtext.innerHTML = 5>1 ? "YES" : "NO"
 
-  if (5 > 1) {
-    document.getElementById('d').innerHTML = "Good Day";
+  
 
 
 }, 500);
