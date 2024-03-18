@@ -8,6 +8,7 @@ setInterval(function () {
   ? 'https://Spoccer.github.io/mp2024assets/phoneBooth.jpg' 
   : 'https://Spoccer.github.io/mp2024assets/circleK.jpeg'
 document.getElementById('d').html = "Gooood Evening";
+    document.getElementById('d').innerHTML = "Goooood Afternoon";
 if (hour >= 19) {
     document.getElementById('d').html = "Good Evening";
   } else if (hour >= 12) {
