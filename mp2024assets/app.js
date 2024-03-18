@@ -6,7 +6,7 @@ setInterval(function () {
   var dtext = document.getElementById('d');
   document.getElementById('d').innerHTML = "Gooooood Evening";
 
-  dtext.innerHTML = 5>1 ? "YES" : "NO"
+  dtext.innerHTML = 5>1 ? "YES" : "NO";
 
   
 
