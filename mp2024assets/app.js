@@ -3,26 +3,18 @@ setInterval(function () {
   if (!imgEl) return;
   
   var date = new Date();
-  
+  var hour = date.getHours() % 4;
   imgEl.src = date.getHours() % 4 == 0 
   ? 'https://Spoccer.github.io/mp2024assets/phoneBooth.jpg' 
   : 'https://Spoccer.github.io/mp2024assets/circleK.jpeg'
-document.getElementById('d').html = "Gooood Evening";
-    document.getElementById('d').innerHTML = "Goooood Afternoon";
-if (hour >= 19) {
-    document.getElementById('d').html = "Good Evening";
-  } else if (hour >= 12) {
+if (hour == 1) {
+    document.getElementById('d').innerHTML = "Good Evening";
+  } else if (hour == 2) {
     document.getElementById('d').innerHTML = "Good Afternoon";
-  } else if (hour >= 6) {
+  } else if (hour == 3) {
     document.getElementById('d').innerHTML = "Good Morning";
-  } else if (hour >= 3) {
-    document.getElementById('d').innerHTML = "GO. TO. SLEEP.";
-  } else if (hour >= 2) {
-    document.getElementById('d').innerHTML = "You should consider going to sleep";
-  } else if (hour >= 0) {
-    document.getElementById('d').innerHTML = "Go to sleep soon";
   } else {
-    document.getElementById('d').innerHTML = "If you see this, something is wrong with the code";
+    document.getElementById('d').innerHTML = "ZERO";
   }
 
 }, 500);
