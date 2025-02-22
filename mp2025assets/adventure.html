@@ -9,17 +9,25 @@
             const canvas = document.getElementById('gameCanvas');
             const ctx = canvas.getContext('2d');
             
-            let size = 500; 
-            if(window.innerWidth < 500)
-                size = window.innerWidth;
-            if(window.innerHeight < size)
-                size = window.innerHeight;
+            canvas.addEventListener('touchstart', (event) => {
+                // Handle touch start
+                console.log('Touch started', event);
+                player.y += gridSize;
+              });
+            
+            let size = 1400; 
+            if(window.innerWidth-50 < 500)
+                size = window.innerWidth-50;
+            if(window.innerHeight-50 < size)
+                size = window.innerHeight-50;
             size = (size/25)*25;
             ctx.canvas.width  = size;
             ctx.canvas.height = size;
 
             const gridSize = size/25;
             let level = 5;
+            
+            
             const player = {
                 x: gridSize,
                 y: gridSize,
