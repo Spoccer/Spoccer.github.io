@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dungeon Crawler</title>
+    </head>
+    <body>
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
+        <script>
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+
+
+            const gridSize = 20;
+            let level = 5;
+            const player = {
+                x: gridSize,
+                y: gridSize,
+                color: 'red'
+            };
+
+
+            const walls = [
+                [ //grid 0 (0,0) Yellow Key
+                    {x: 0, y: 0, width: gridSize, height: canvas.height}, //LEFT
+                    {x: 0, y: 0, width: canvas.width, height: gridSize}, //TOP
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: 10*gridSize}, //RIGHT
+                    {x: canvas.width - gridSize, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //RIGHT                    
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+
+                    {x: 2 * gridSize, y: 2 * gridSize, width: gridSize, height: 10*gridSize},//left side
+                    {x: 2 * gridSize, y: 13 * gridSize, width: gridSize, height: 10*gridSize},
+                    {x: 2 * gridSize, y: 2 * gridSize, width: 21*gridSize, height: gridSize}, //top
+                    {x: 2 * gridSize, y: canvas.height - 3*gridSize, width: 21*gridSize, height: gridSize},
+                    {x: canvas.height - 3*gridSize, y: 2 * gridSize, width: gridSize, height: 21*gridSize},
+                    
+                    {x: 2 * gridSize, y: 11 * gridSize, width: 6*gridSize, height: gridSize},
+                    {x: 2 * gridSize, y: 13 * gridSize, width: 6*gridSize, height: gridSize}                    
+                ],
+
+                [ //grid 1 (0,1) EGG DROP
+                    {x: 0, y: 0, width: gridSize, height: 10*gridSize}, //LEFT
+                    {x: 0, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //LEFT
+                    {x: 0, y: 0, width: canvas.width, height: gridSize}, //TOP
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: 10*gridSize}, //RIGHT
+                    {x: canvas.width - gridSize, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //RIGHT                    
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+
+                    {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                    {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+
+                [ //grid 2 (0,2) Big Hall 4
+                    {x: 0, y: 0, width: gridSize, height: 10*gridSize}, //LEFT
+                    {x: 0, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //LEFT
+                    {x: 0, y: 0, width: canvas.width, height: gridSize}, //TOP
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: 10*gridSize}, //RIGHT
+                    {x: canvas.width - gridSize, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //RIGHT                    
+//                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+
+                    {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                    {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+
+                [ //grid 3 (0,3) RED Castle room
+                        //Exterior
+                    {x: 0, y: 0, width: gridSize, height: 10*gridSize}, //Left
+                    {x: 0, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //Left
+                    {x: 0, y: 0, width: 6*gridSize, height: gridSize}, //Top
+                    {x: 7*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 9*gridSize, y: 0, width: 7*gridSize, height: gridSize},
+                    {x: 15*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 17*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 19*gridSize, y: 0, width: 6*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //Right
+                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+
+
+                        //Castle
+                    {x: 5*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 15*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 7*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 14*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 10*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize},
+                    {x: 13*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize}
+               ],
+                [ //grid 4 (1,0) BLUE Key
+                    {x: 0, y: 0, width: gridSize, height: canvas.height},
+                    {x: 0, y: 0, width: canvas.width, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height},
+//                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize},
+                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+
+                    {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                    {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+
+                [ //grid 5 (1,1) BLACK Castle room
+                        //Exterior
+                    {x: 0, y: 0, width: gridSize, height: canvas.height}, //Left
+                    {x: 0, y: 0, width: 6*gridSize, height: gridSize}, //Top
+                    {x: 7*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 9*gridSize, y: 0, width: 7*gridSize, height: gridSize},
+                    {x: 15*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 17*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 19*gridSize, y: 0, width: 6*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //Right
+                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+
+
+                        //Castle
+                    {x: 5*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 15*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 7*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 14*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 10*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize},
+                    {x: 13*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize}
+                ],
+
+                [ //grid 6 (1,2) RED Key
+                    {x: 0, y: 0, width: gridSize, height: canvas.height}, //Left
+                    {x: 0, y: 0, width: 10*gridSize, height: gridSize}, //top
+                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //right
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //bottom
+
+                    {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                    {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+
+                [ //grid 7 (1,3) Big Hall 5
+                    {x: 0, y: 0, width: gridSize, height: canvas.height}, //Left
+                    {x: 0, y: 0, width: 10*gridSize, height: gridSize}, //top
+                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //right
+                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+
+                    {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                    {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+
+                [ //grid 8 (2,0) Big Hall 1 (hole in top , wide open right
+                    
+                    {x: 0, y: 0, width: gridSize, height: canvas.height}, //LEFT
+                    {x: 0, y: 0, width: 10*gridSize, height: gridSize}, //TOP
+                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+//                {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //RIGHT
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+//                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+//                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                
+                ],
+                [ //grid 9 (2,1) Big Hall 2 (hole in top and bottom wide open left right
+                    
+//                {x: 0, y: 0, width: gridSize, height: canvas.height}, //LEFT
+                    {x: 0, y: 0, width: 10*gridSize, height: gridSize},
+                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+//                {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //RIGHT
+                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                
+                ],
+                [ //grid 10 (2,2) Big Hall 3 (wide open left right
+                    
+//                {x: 0, y: 0, width: gridSize, height: canvas.height}, //LEFT
+                    {x: 0, y: 0, width: canvas.width, height: gridSize}, //TOP
+//                    {x: 0, y: 0, width: 10*gridSize, height: gridSize},
+//                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+//                {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //RIGHT
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+//                    {x: 0, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+//                    {x: 15*gridSize, y: canvas.height - gridSize, width: 10*gridSize, height: gridSize}, //Bottom
+                
+                ],
+                [ //grid 11 (2,3) BLACK Key
+//                    {x: 0, y: 0, width: gridSize, height: canvas.height},
+//                    {x: 0, y: 0, width: canvas.width, height: gridSize},
+                    {x: 0, y: 0, width: 10*gridSize, height: gridSize}, //TOP
+                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //RIGHT
+//                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize},
+
+                    {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                    {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+
+                [ //grid 12 (3,0) YELLOW Castle room
+                        //Exterior
+                    {x: 0, y: 0, width: gridSize, height: canvas.height}, //Left
+                    {x: 0, y: 0, width: 6*gridSize, height: gridSize}, //Top
+                    {x: 7*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 9*gridSize, y: 0, width: 7*gridSize, height: gridSize},
+                    {x: 15*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 17*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 19*gridSize, y: 0, width: 6*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: 10*gridSize}, //RIGHT
+                    {x: canvas.width - gridSize, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //RIGHT                    
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+
+
+                        //Castle
+                    {x: 5*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 15*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 7*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 14*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 10*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize},
+                    {x: 13*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize}
+               ],
+                [ //Grid 13 (3,1) Weavy Hall 
+                    
+                    {x: 0, y: 0, width: gridSize, height: 10*gridSize}, //LEFT
+                    {x: 0, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //LEFT
+                    {x: 0, y: 0, width: 10*gridSize, height: gridSize}, //TOP
+                    {x: 15*gridSize, y: 0, width: 10*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: 10*gridSize}, //RIGHT
+                    {x: canvas.width - gridSize, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //RIGHT
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+                
+                ],
+                [ //Grid 14 (3,2) BLUE Castle room
+                        //Exterior
+                    {x: 0, y: 0, width: gridSize, height: 10*gridSize}, //Left
+                    {x: 0, y: 15*gridSize, width: gridSize, height: 10*gridSize}, //Left
+                    {x: 0, y: 0, width: 6*gridSize, height: gridSize}, //Top
+                    {x: 7*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 9*gridSize, y: 0, width: 7*gridSize, height: gridSize},
+                    {x: 15*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 17*gridSize, y: 0, width: gridSize, height: gridSize},
+                    {x: 19*gridSize, y: 0, width: 6*gridSize, height: gridSize},
+                    {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height}, //Right
+                    {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize}, //BOTTOM
+
+
+                        //Castle
+                    {x: 5*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 15*gridSize, y: 1*gridSize, width: 5*gridSize, height: 8*gridSize},
+                    {x: 7*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 14*gridSize, y: 7*gridSize, width: 4*gridSize, height: 7*gridSize},
+                    {x: 10*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize},
+                    {x: 13*gridSize, y: 4*gridSize, width: 2*gridSize, height: 6*gridSize}
+               ],
+               [ //grid 15 (3,3)
+                {x: 0, y: 0, width: gridSize, height: canvas.height},
+//                {x: 0, y: 0, width: canvas.width, height: gridSize},
+                {x: canvas.width - gridSize, y: 0, width: gridSize, height: canvas.height},
+                {x: 0, y: canvas.height - gridSize, width: canvas.width, height: gridSize},
+                
+//                {x: 3 * gridSize, y: 2 * gridSize, width: gridSize, height: 3 * gridSize},
+                {x: 7 * gridSize, y: 5 * gridSize, width: 2 * gridSize, height: gridSize}
+                ],
+            ];
+
+            const img = new Image();
+            img.src = "Double_Dare_2018_logo.png"; // Replace with your image path
+
+//            img.onload = function() {
+//              ctx.drawImage(img, 300, 300, 100, 50);
+//            };
+            
+//            img.addEventListener("load", (e) => {
+//                ctx.drawImage(img, 10, 10);
+//              });
+
+            function drawPlayer() {
+                ctx.fillStyle = player.color;
+                ctx.fillRect(player.x, player.y, gridSize, gridSize);
+            }
+
+
+            function drawWalls() {
+                ctx.fillStyle = 'black';
+                walls[level].forEach(wall => {
+                    ctx.fillRect(wall.x, wall.y, wall.width, wall.height);
+                });
+            }
+            
+            function drawExtras() {
+                if(player.y >=200)
+                    ctx.drawImage(img, 300, 300, 100, 50);
+                ctx.font = '20px Arial';
+                ctx.fillStyle = 'blue';
+                ctx.fillText('Hello, Canvas! '+level, player.x, player.y+30); // Filled text
+//                ctx.strokeText('Hello, Canvas!', 50, 100); // Outlined text
+            }
+
+
+            function checkCollision(x, y) {
+                for (let wall of walls[level]) {
+                    if (x < wall.x + wall.width &&
+                            x + gridSize > wall.x &&
+                            y < wall.y + wall.height &&
+                            y + gridSize > wall.y) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+
+            function gameLoop() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawWalls();
+                drawExtras();
+//                ctx.drawImage(img, 300, 300, 100, 50);
+                drawPlayer();
+                requestAnimationFrame(gameLoop);
+            }
+            
+            function show_image(src, width, height,alt) {
+            // Create a new image element
+            let img = document.createElement("img");
+
+            // Set the source, width, 
+            // height, and alt attributes
+            img.src = src;
+            img.width = width;
+            img.height = height;
+            img.alt = alt;
+
+            // Append the image element
+            // to the body of the document
+            document.body.appendChild(img);
+           }
+
+
+            document.addEventListener('keydown', (event) => {
+                let newX = player.x;
+                let newY = player.y;
+
+
+                switch (event.key) {
+                    case 'ArrowUp':
+                        newY -= gridSize;
+                        break;
+                    case 'ArrowDown':
+                        newY += gridSize;
+                        break;
+                    case 'ArrowLeft':
+                        newX -= gridSize;
+                        break;
+                    case 'ArrowRight':
+                        newX += gridSize;
+                        break;
+                }
+
+
+                if (!checkCollision(newX, newY)) {
+                    player.x = newX;
+                    player.y = newY;
+                }
+                
+                //Moving to new grid...
+                if(player.x >= canvas.width)
+                {
+                    level++;
+                    player.x = 0;
+                }
+                if(player.x < 0)
+                {
+                    level--;
+                    player.x = canvas.width-gridSize;
+                }
+                if(player.y >= canvas.height)
+                {
+                    level+=4;
+                    player.y = 0;
+                }                    
+                if(player.y < 0)
+                {
+                    level-=4;
+                    player.y = canvas.height-gridSize;
+                }
+                
+                
+//                if(player.x >=300)
+//                    level = 1;
+                
+//                if(player.x >= 200)
+//                {
+//                    let person = prompt("Please enter your name", "HP");
+//                    let text;
+//                    if (person == null || person == "") {
+//                        player.x=gridSize;
+//                    } else if (person == "HP") {
+//                        player.x=gridSize+gridSize;
+//                    }
+//                    else
+//                        player.x = 3*gridSize;
+//                                            
+//                }
+                
+//                if(player.y >=200)
+////                    ctx.drawImage(img, 300, 300, 100, 50);
+//                    show_image("Double_Dare_2018_logo.png", 300, 200,"altText");
+
+//                if (player.x >= 200)
+//                    window.open("http://www.cnn.com", '_blank');
+            });
+
+
+            gameLoop();
+        </script>
+    </body>
+</html>
