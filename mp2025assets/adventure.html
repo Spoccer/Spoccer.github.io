@@ -9,11 +9,6 @@
             const canvas = document.getElementById('gameCanvas');
             const ctx = canvas.getContext('2d');
             
-            canvas.addEventListener('touchstart', (event) => {
-                // Handle touch start
-                console.log('Touch started', event);
-                player.y += gridSize;
-              });
             
             let size = 1400; 
             if(window.innerWidth-50 < 500)
@@ -343,6 +338,28 @@
             document.body.appendChild(img);
            }
 
+            canvas.addEventListener('touchstart', (event) => {
+                // Handle touch start
+                let newX = player.x;
+                let newY = player.y;
+                const touch = e.touches[0]; // e.touches is an array containing all touches
+                const x = touch.clientX;
+                const y = touch.clientY;
+                if(y > gridSize*15)
+                    newY += gridSize;
+                if(y < gridSize*10)
+                    newY -= gridSize;
+                if(x > gridSize*15)
+                    newX += gridSize;
+                if(x < gridSize*10)
+                    newX -= gridSize;
+                
+                if (!checkCollision(newX, newY)) {
+                    player.x = newX;
+                    player.y = newY;
+                }
+                
+              });
 
             document.addEventListener('keydown', (event) => {
                 let newX = player.x;
@@ -371,7 +388,7 @@
                 }
                 
                 //Moving to new grid...
-                if(player.x >= canvas.width)
+                if(player.x >= canvas.width-2)
                 {
                     level++;
                     player.x = 0;
@@ -381,7 +398,7 @@
                     level--;
                     player.x = canvas.width-gridSize;
                 }
-                if(player.y >= canvas.height)
+                if(player.y >= canvas.height-2)
                 {
                     level+=4;
                     player.y = 0;
