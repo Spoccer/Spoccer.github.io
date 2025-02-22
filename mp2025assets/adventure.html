@@ -29,6 +29,10 @@
                 color: 'red'
             };
 
+            const colors = ['yellow','purple','skyblue','deeppink',
+                            'blue','black','hotpink','steelblue',
+                            'gray','green','orange','black',
+                            'yellow','navy','blue','purple'];
 
             const walls = [
                 [ //grid 0 (0,0) Yellow Key
@@ -284,7 +288,9 @@
 
 
             function drawWalls() {
-                ctx.fillStyle = 'black';
+//                ctx.fillStyle = 'black';
+//                ctx.fillStyle = 'rgb(0, 0, 255)';
+                ctx.fillStyle = colors[level];
                 walls[level].forEach(wall => {
                     ctx.fillRect(wall.x, wall.y, wall.width, wall.height);
                 });
@@ -295,7 +301,7 @@
                     ctx.drawImage(img, 300, 300, 100, 50);
                 ctx.font = '20px Arial';
                 ctx.fillStyle = 'blue';
-                ctx.fillText('Hello, Canvas! '+level, player.x, player.y+30); // Filled text
+                ctx.fillText('Hello! '+level, player.x, player.y+30); // Filled text
 //                ctx.strokeText('Hello, Canvas!', 50, 100); // Outlined text
             }
 
@@ -338,7 +344,7 @@
             document.body.appendChild(img);
            }
 
-            canvas.addEventListener('touchstart', (event) => {
+            document.addEventListener('touchstart', (event) => {
                 // Handle touch start
                 let newX = player.x;
                 let newY = player.y;
