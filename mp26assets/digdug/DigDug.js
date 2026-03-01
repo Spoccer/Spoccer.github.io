@@ -339,20 +339,36 @@ function startGame() {
 		case 9:
 			randomItem = 1;
 			player = new Player(300, 150);
-			monstersArray.push(new Blob(150,200));
-			monstersArray.push(new Blob(50,400));
-			monstersArray.push(new Blob(500,475));
-			monstersArray.push(new Dragon(450,200));
-			monstersArray.push(new Dragon(500,100));
-		 	monstersArray.push(new Dragon(100,500));
-			itemArray.push(new Mushroom(100,100));
-			itemArray.push(new Carrot(375, 175));
-			itemArray.push(new Watermelon(150, 400));
-			itemArray.push(new Eggplant(325, 300));
-			itemArray.push(new Cucumber(175, 50));
-			itemArray.push(new Flower(475, 200));
+
+
+
+			monstersArray.push(new Blob(150,100));
+			monstersArray.push(new Blob(250,200));
+			monstersArray.push(new Blob(175,475));
+			monstersArray.push(new Dragon(100,200));
+			monstersArray.push(new Dragon(400,200));
+			monstersArray.push(new Blob(150,350));
+			monstersArray.push(new Blob(325,475));
+			monstersArray.push(new Dragon(225,275));
+			monstersArray.push(new Dragon(450,125));
+		 	monstersArray.push(new Dragon(250,425));
+			itemArray.push(new Mushroom(50,100));
+			itemArray.push(new Carrot(250, 125));
+			itemArray.push(new Watermelon(300, 125));
+			itemArray.push(new Eggplant(350, 125));
+			itemArray.push(new Cucumber(225, 225));
+			itemArray.push(new Flower(275, 225));
+			itemArray.push(new Mushroom(350, 275));
+			itemArray.push(new Carrot(425, 275));
+			itemArray.push(new Watermelon(50, 350));
+			itemArray.push(new Eggplant(250, 350));
+			itemArray.push(new Cucumber(225, 400));
+			itemArray.push(new Flower(275, 400));
+			itemArray.push(new Mushroom(350,425));
+			itemArray.push(new Carrot(425, 475));
+
 			rockArray.push(new Rock(325, 250));
-			rockArray.push(new Rock(175, 100));
+			rockArray.push(new Rock(175, 125));
 			break;
 		default:
 			mode = "end";
